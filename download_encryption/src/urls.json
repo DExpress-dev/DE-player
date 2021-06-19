@@ -1,0 +1,12 @@
+{
+    "streams":[
+        {
+		"channelName":"channel1",
+		"sourceUrl":"http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8",
+		"pushUrl":"",
+		"srcPath":"/data/src/channel1",
+		"key":"ABCDABCDABCDABCD",
+		"encryptionPath":"/data/encryption/channel1"
+        }
+    ]
+}

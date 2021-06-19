@@ -1,0 +1,20 @@
+{
+	"ChannelListen":"0.0.0.0:18085",
+	"AdminListen":"0.0.0.0:18086",
+	"admin":"admins.json",
+	"stream":{
+		"url_file":"urls.json",
+		"bandwidth":"max",
+		"max_count":100,
+		"delete_count":40
+	},
+	"download":{
+		"timeout":10,
+		"retry_count":5,
+		"retry_wait":5
+	},
+	"udp":{
+		"remote":"http://127.0.0.1:8081",
+		"folder":"udp"
+	}
+}

@@ -1,0 +1,34 @@
+goini
+##描述
+
+使用goini更简单的读取go的ini配置文件以及根据特定格式的各种配置文件。
+本package修改自 github.com/widuu/goini
+
+>ini配置文件格式样列
+
+	[database]
+	username = root
+	password = password
+	hostname = localhost
+	
+	[admin]
+	username = root
+	password = password
+	
+	[nihao]
+	username = root
+	password = password
+
+
+代码使用：
+	ConfigFile := Init("./conf/conf.ini")  // Init(configPath string)
+	username := ConfigFile.Read_string("database", "username", "go.log")
+	fmt.Println(username)
+
+	admin := ConfigFile.Read_string("admin", "password", "go.log")
+	fmt.Println(admin)
+
+
+
+
+
