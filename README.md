@@ -19,16 +19,19 @@ DExpress 独立研发的播放器，针对当前播放器采用简单的hls协�
 	4：提供HLS协议接口，避免用户需要安装Nginx模块来提供HLS播放功能。
 
 ### dexpress_player
-	基于FFMPeg开发的完整的播放器SDK。此sdk从指定的地址（这里可以是通过download_encryption产生加密流或者传统的HLS非加密流）获取视频流，并进行播放。dexpress player功能为：
+	基于FFMPeg开发的完整的播放器SDK。此sdk从指定的地址（这里可以是通过download_encryption产生加密流或者传统的HLS非加密流）
+	获取视频流，并进行播放。dexpress player功能为：
 	
 	1：码率自适应功能：
 		 对于多码率的HLS视频流来说，dexpress_player会根据当前带宽情况计算出最合理的视频码率，播放这个视频码率。
 	
 	2：解密功能：
-		对于加密的视频流（通过download_encryption加密的视频流），dexpress_player可以自动调用获取秘钥接口，并对相应的TS音视频文件进行解密、播放。
+		对于加密的视频流（通过download_encryption加密的视频流），dexpress_player可以自动调用获取秘钥接口，
+		并对相应的TS音视频文件进行解密、播放。
 	
 	3：自动选择播放器功能：
-		对于解码性能不足的盒子（很多盒子可以采用系统播放器进行硬解码，但是无法采用Mediacodec进行解码），dexpress_player可以根据盒子的型号等进行自动选择播放器类型。	
+		对于解码性能不足的盒子（很多盒子可以采用系统播放器进行硬解码，但是无法采用Mediacodec进行解码），
+		dexpress_player可以根据盒子的型号等进行自动选择播放器类型。	
 
 
 
