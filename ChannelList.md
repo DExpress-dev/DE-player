@@ -9,5 +9,6 @@ DExpress 独立研发的播放器，针对当前播放器采用简单的hls协�
 	
 	1：CCTV
 		http://61.160.212.59:18085/channellist/channel1/index.m3u8。
+![image](https://github.com/DExpress-dev/DEPlayer/blob/main/Image/image.png)
 
 
