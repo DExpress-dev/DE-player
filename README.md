@@ -1,4 +1,4 @@
-# DEPlayer(DExpress Player)
+# DE-player(DExpress player)
 
 ------
 
