@@ -1,0 +1,57 @@
+2021/06/26 18:59:13 [ INFO] <main.go:149> src.debug Version=1.0.1 Build Time=[Jun 26 2021  18:59:08]
+2021/06/26 18:59:13 [ INFO] <main.go:153> Start configLoad
+2021/06/26 18:59:13 [ INFO] <main.go:124> (c *ConfigBusiness) configLoad Open config.json Success
+2021/06/26 18:59:13 [ INFO] <main.go:136> (c *ConfigBusiness) configLoad config.json 
+ adminListen=0.0.0.0:18086
+ channelListen=0.0.0.0:18085
+
+2021/06/26 18:59:13 [ INFO] <main.go:160> Create Web Manager
+2021/06/26 18:59:13 [ INFO] <web.go:386> getStreamConfig
+2021/06/26 18:59:13 [ INFO] <web.go:402> loadConfig Open config.json Success
+2021/06/26 18:59:13 [ INFO] <web.go:421> getAdminsConfig
+2021/06/26 18:59:13 [ INFO] <web.go:437> getAdminsConfig Open config.json Success
+2021/06/26 18:59:13 [ INFO] <web.go:492> Create Channel Web Manager
+2021/06/26 18:59:13 [ INFO] <web.go:499> Create Admin Web Manager
+2021/06/26 18:59:13 [ INFO] <web.go:506> Create Streams Download Manager
+2021/06/26 18:59:13 [ INFO] <server.go:310> loadConfig
+2021/06/26 18:59:13 [ INFO] <server.go:325> loadConfig Open config.json Success
+2021/06/26 18:59:13 [ INFO] <server.go:353> StreamsDownload Current Stream Count=1...
+2021/06/26 18:59:13 [DEBUG] <server.go:257> [channel1]HandleParseM3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/26 18:59:13 [DEBUG] <server.go:263> [channel1]HandleDownloadedM3u8 uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/26 18:59:13 [DEBUG] <server.go:267> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624705121_7303742.ts localFile=/data/src/channel1/cctv1_2md/1624705121_7303742.ts
+2021/06/26 18:59:13 [DEBUG] <server.go:267> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624705132_7303743.ts localFile=/data/src/channel1/cctv1_2md/1624705132_7303743.ts
+2021/06/26 18:59:13 [DEBUG] <server.go:267> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624705143_7303744.ts localFile=/data/src/channel1/cctv1_2md/1624705143_7303744.ts
+2021/06/26 18:59:13 [DEBUG] <server.go:267> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624705111_7303741.ts localFile=/data/src/channel1/cctv1_2md/1624705111_7303741.ts
+2021/06/26 18:59:15 [DEBUG] <server.go:257> [channel1]HandleParseM3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/26 18:59:15 [DEBUG] <server.go:263> [channel1]HandleDownloadedM3u8 uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/26 18:59:15 [DEBUG] <server.go:267> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624705154_7303745.ts localFile=/data/src/channel1/cctv1_2md/1624705154_7303745.ts
+2021/06/26 18:59:25 [DEBUG] <server.go:257> [channel1]HandleParseM3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/26 18:59:25 [DEBUG] <server.go:263> [channel1]HandleDownloadedM3u8 uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/26 18:59:25 [DEBUG] <server.go:267> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624705164_7303746.ts localFile=/data/src/channel1/cctv1_2md/1624705164_7303746.ts
+2021/06/26 18:59:48 [ INFO] <main.go:149> src.debug Version=1.0.1 Build Time=[Jun 26 2021  18:59:08]
+2021/06/26 18:59:48 [ INFO] <main.go:153> Start configLoad
+2021/06/26 18:59:48 [ INFO] <main.go:124> (c *ConfigBusiness) configLoad Open config.json Success
+2021/06/26 18:59:48 [ INFO] <main.go:136> (c *ConfigBusiness) configLoad config.json 
+ adminListen=0.0.0.0:18086
+ channelListen=0.0.0.0:18085
+
+2021/06/26 18:59:48 [ INFO] <main.go:160> Create Web Manager
+2021/06/26 18:59:48 [ INFO] <web.go:386> getStreamConfig
+2021/06/26 18:59:48 [ INFO] <web.go:402> loadConfig Open config.json Success
+2021/06/26 18:59:48 [ INFO] <web.go:421> getAdminsConfig
+2021/06/26 18:59:48 [ INFO] <web.go:437> getAdminsConfig Open config.json Success
+2021/06/26 18:59:48 [ INFO] <web.go:492> Create Channel Web Manager
+2021/06/26 18:59:48 [ INFO] <web.go:499> Create Admin Web Manager
+2021/06/26 18:59:48 [ INFO] <web.go:506> Create Streams Download Manager
+2021/06/26 18:59:48 [ INFO] <server.go:310> loadConfig
+2021/06/26 18:59:48 [ INFO] <server.go:325> loadConfig Open config.json Success
+2021/06/26 18:59:48 [ INFO] <server.go:353> StreamsDownload Current Stream Count=1...
+2021/06/26 18:59:48 [DEBUG] <server.go:257> [channel1]HandleParseM3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/26 18:59:48 [DEBUG] <server.go:263> [channel1]HandleDownloadedM3u8 uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/26 18:59:48 [DEBUG] <server.go:267> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624705164_7303746.ts localFile=/data/src/channel1/cctv1_2md/1624705164_7303746.ts
+2021/06/26 18:59:48 [DEBUG] <server.go:267> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624705154_7303745.ts localFile=/data/src/channel1/cctv1_2md/1624705154_7303745.ts
+2021/06/26 18:59:48 [DEBUG] <server.go:267> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624705185_7303748.ts localFile=/data/src/channel1/cctv1_2md/1624705185_7303748.ts
+2021/06/26 18:59:48 [DEBUG] <server.go:267> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624705175_7303747.ts localFile=/data/src/channel1/cctv1_2md/1624705175_7303747.ts
+2021/06/26 18:59:57 [DEBUG] <server.go:257> [channel1]HandleParseM3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/26 18:59:57 [DEBUG] <server.go:263> [channel1]HandleDownloadedM3u8 uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/26 18:59:57 [DEBUG] <server.go:267> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624705196_7303749.ts localFile=/data/src/channel1/cctv1_2md/1624705196_7303749.ts

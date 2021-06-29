@@ -1,0 +1,232 @@
+2021/06/18 15:13:42 [ INFO] <main.go:149> download_encryption.debug Version=1.0.1 Build Time=[Jun 18 2021  15:13:37]
+2021/06/18 15:13:42 [ INFO] <main.go:153> Start configLoad
+2021/06/18 15:13:42 [ INFO] <main.go:124> (c *ConfigBusiness) configLoad Open config.json Success
+2021/06/18 15:13:42 [ INFO] <main.go:136> (c *ConfigBusiness) configLoad config.json 
+ adminListen=0.0.0.0:18086
+ channelListen=0.0.0.0:18085
+
+2021/06/18 15:13:42 [ INFO] <main.go:160> Create Web Manager
+2021/06/18 15:13:42 [ INFO] <web.go:367> getStreamConfig
+2021/06/18 15:13:42 [ INFO] <web.go:383> loadConfig Open config.json Success
+2021/06/18 15:13:46 [ INFO] <web.go:399> getAdminsConfig
+2021/06/18 15:13:56 [ INFO] <web.go:415> getAdminsConfig Open config.json Success
+2021/06/18 15:17:12 [ INFO] <main.go:149> download_encryption.debug Version=1.0.1 Build Time=[Jun 18 2021  15:17:08]
+2021/06/18 15:17:12 [ INFO] <main.go:153> Start configLoad
+2021/06/18 15:17:12 [ INFO] <main.go:124> (c *ConfigBusiness) configLoad Open config.json Success
+2021/06/18 15:17:12 [ INFO] <main.go:136> (c *ConfigBusiness) configLoad config.json 
+ adminListen=0.0.0.0:18086
+ channelListen=0.0.0.0:18085
+
+2021/06/18 15:17:12 [ INFO] <main.go:160> Create Web Manager
+2021/06/18 15:17:12 [ INFO] <web.go:366> getStreamConfig
+2021/06/18 15:17:12 [ INFO] <web.go:382> loadConfig Open config.json Success
+2021/06/18 15:17:14 [ INFO] <web.go:398> getAdminsConfig
+2021/06/18 15:17:20 [ INFO] <web.go:414> getAdminsConfig Open config.json Success
+2021/06/18 15:18:33 [ INFO] <main.go:149> download_encryption.debug Version=1.0.1 Build Time=[Jun 18 2021  15:17:08]
+2021/06/18 15:18:33 [ INFO] <main.go:153> Start configLoad
+2021/06/18 15:18:33 [ INFO] <main.go:124> (c *ConfigBusiness) configLoad Open config.json Success
+2021/06/18 15:18:33 [ INFO] <main.go:136> (c *ConfigBusiness) configLoad config.json 
+ adminListen=0.0.0.0:18086
+ channelListen=0.0.0.0:18085
+
+2021/06/18 15:18:33 [ INFO] <main.go:160> Create Web Manager
+2021/06/18 15:18:33 [ INFO] <web.go:366> getStreamConfig
+2021/06/18 15:18:33 [ INFO] <web.go:382> loadConfig Open config.json Success
+2021/06/18 15:18:35 [ INFO] <web.go:398> getAdminsConfig
+2021/06/18 15:18:42 [ INFO] <web.go:414> getAdminsConfig Open config.json Success
+2021/06/18 15:18:45 [ERROR] <web.go:419> getAdminsConfig json.Unmarshal Failed json: cannot unmarshal string into Go struct field AdminsIP.admins of type business.AdminIP
+2021/06/18 15:18:46 [ INFO] <web.go:469> Create Channel Web Manager
+2021/06/18 15:18:46 [ INFO] <web.go:476> Create Admin Web Manager
+2021/06/18 15:18:46 [ INFO] <web.go:483> Create Streams Download Manager
+2021/06/18 15:18:46 [ INFO] <server.go:288> loadConfig
+2021/06/18 15:18:46 [ INFO] <server.go:305> loadConfig Open config.json Success
+2021/06/18 15:18:46 [ INFO] <server.go:331> StreamsDownload Current Stream Count=1...
+2021/06/18 15:18:46 [DEBUG] <server.go:240> [channel1]HandleParseM3u8 localFile=/data/channel1/index.m3u8
+2021/06/18 15:18:46 [DEBUG] <server.go:246> [channel1]HandleDownloadedM3u8 uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8 localFile=/data/channel1/index.m3u8
+2021/06/18 15:18:46 [DEBUG] <server.go:250> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624000705_7236465.ts localFile=/data/channel1/cctv1_2md/1624000705_7236465.ts
+2021/06/18 15:18:46 [DEBUG] <server.go:250> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624000715_7236466.ts localFile=/data/channel1/cctv1_2md/1624000715_7236466.ts
+2021/06/18 15:18:46 [DEBUG] <server.go:250> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624000695_7236464.ts localFile=/data/channel1/cctv1_2md/1624000695_7236464.ts
+2021/06/18 15:18:46 [DEBUG] <server.go:250> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624000683_7236463.ts localFile=/data/channel1/cctv1_2md/1624000683_7236463.ts
+2021/06/18 15:18:47 [DEBUG] <server.go:240> [channel1]HandleParseM3u8 localFile=/data/channel1/index.m3u8
+2021/06/18 15:18:47 [DEBUG] <server.go:250> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624000726_7236467.ts localFile=/data/channel1/cctv1_2md/1624000726_7236467.ts
+2021/06/18 15:18:47 [DEBUG] <server.go:246> [channel1]HandleDownloadedM3u8 uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8 localFile=/data/channel1/index.m3u8
+2021/06/18 15:19:14 [ INFO] <main.go:149> download_encryption.debug Version=1.0.1 Build Time=[Jun 18 2021  15:19:10]
+2021/06/18 15:19:14 [ INFO] <main.go:153> Start configLoad
+2021/06/18 15:19:14 [ INFO] <main.go:124> (c *ConfigBusiness) configLoad Open config.json Success
+2021/06/18 15:19:14 [ INFO] <main.go:136> (c *ConfigBusiness) configLoad config.json 
+ adminListen=0.0.0.0:18086
+ channelListen=0.0.0.0:18085
+
+2021/06/18 15:19:14 [ INFO] <main.go:160> Create Web Manager
+2021/06/18 15:19:14 [ INFO] <web.go:366> getStreamConfig
+2021/06/18 15:19:14 [ INFO] <web.go:382> loadConfig Open config.json Success
+2021/06/18 15:19:16 [ INFO] <web.go:398> getAdminsConfig
+2021/06/18 15:19:18 [ INFO] <web.go:414> getAdminsConfig Open config.json Success
+2021/06/18 15:19:18 [ERROR] <web.go:419> getAdminsConfig json.Unmarshal Failed json: cannot unmarshal string into Go struct field AdminsIP.admins of type business.AdminIP
+2021/06/18 15:19:44 [ INFO] <main.go:149> download_encryption.debug Version=1.0.1 Build Time=[Jun 18 2021  15:19:40]
+2021/06/18 15:19:44 [ INFO] <main.go:153> Start configLoad
+2021/06/18 15:19:44 [ INFO] <main.go:124> (c *ConfigBusiness) configLoad Open config.json Success
+2021/06/18 15:19:44 [ INFO] <main.go:136> (c *ConfigBusiness) configLoad config.json 
+ adminListen=0.0.0.0:18086
+ channelListen=0.0.0.0:18085
+
+2021/06/18 15:19:44 [ INFO] <main.go:160> Create Web Manager
+2021/06/18 15:19:44 [ INFO] <web.go:366> getStreamConfig
+2021/06/18 15:19:44 [ INFO] <web.go:382> loadConfig Open config.json Success
+2021/06/18 15:19:45 [ INFO] <web.go:398> getAdminsConfig
+2021/06/18 15:19:47 [ INFO] <web.go:414> getAdminsConfig Open config.json Success
+2021/06/18 15:19:47 [ERROR] <web.go:419> getAdminsConfig json.Unmarshal Failed json: cannot unmarshal string into Go struct field AdminsIP.admins of type business.AdminIP
+2021/06/18 15:25:47 [ INFO] <main.go:149> download_encryption.debug Version=1.0.1 Build Time=[Jun 18 2021  15:25:41]
+2021/06/18 15:25:47 [ INFO] <main.go:153> Start configLoad
+2021/06/18 15:25:47 [ INFO] <main.go:124> (c *ConfigBusiness) configLoad Open config.json Success
+2021/06/18 15:25:47 [ INFO] <main.go:136> (c *ConfigBusiness) configLoad config.json 
+ adminListen=0.0.0.0:18086
+ channelListen=0.0.0.0:18085
+
+2021/06/18 15:25:47 [ INFO] <main.go:160> Create Web Manager
+2021/06/18 15:25:47 [ INFO] <web.go:366> getStreamConfig
+2021/06/18 15:25:47 [ INFO] <web.go:382> loadConfig Open config.json Success
+2021/06/18 15:25:53 [ INFO] <web.go:398> getAdminsConfig
+2021/06/18 15:25:59 [ INFO] <web.go:414> getAdminsConfig Open config.json Success
+2021/06/18 16:34:38 [ INFO] <main.go:149> download_encryption.debug Version=1.0.1 Build Time=[Jun 18 2021  16:34:36]
+2021/06/18 16:34:38 [ INFO] <main.go:153> Start configLoad
+2021/06/18 16:34:38 [ INFO] <main.go:124> (c *ConfigBusiness) configLoad Open config.json Success
+2021/06/18 16:34:38 [ INFO] <main.go:136> (c *ConfigBusiness) configLoad config.json 
+ adminListen=0.0.0.0:18086
+ channelListen=0.0.0.0:18085
+
+2021/06/18 16:34:38 [ INFO] <main.go:160> Create Web Manager
+2021/06/18 16:34:38 [ INFO] <web.go:362> getStreamConfig
+2021/06/18 16:34:38 [ INFO] <web.go:378> loadConfig Open config.json Success
+2021/06/18 16:34:40 [ INFO] <web.go:394> getAdminsConfig
+2021/06/18 16:34:44 [ INFO] <web.go:410> getAdminsConfig Open config.json Success
+2021/06/18 16:36:10 [ INFO] <main.go:149> download_encryption.debug Version=1.0.1 Build Time=[Jun 18 2021  16:36:08]
+2021/06/18 16:36:10 [ INFO] <main.go:153> Start configLoad
+2021/06/18 16:36:10 [ INFO] <main.go:124> (c *ConfigBusiness) configLoad Open config.json Success
+2021/06/18 16:36:10 [ INFO] <main.go:136> (c *ConfigBusiness) configLoad config.json 
+ adminListen=0.0.0.0:18086
+ channelListen=0.0.0.0:18085
+
+2021/06/18 16:36:10 [ INFO] <main.go:160> Create Web Manager
+2021/06/18 16:36:10 [ INFO] <web.go:362> getStreamConfig
+2021/06/18 16:36:10 [ INFO] <web.go:378> loadConfig Open config.json Success
+2021/06/18 16:36:10 [ INFO] <web.go:394> getAdminsConfig
+2021/06/18 16:36:10 [ INFO] <web.go:410> getAdminsConfig Open config.json Success
+2021/06/18 16:36:10 [ INFO] <web.go:465> Create Channel Web Manager
+2021/06/18 16:36:10 [ INFO] <web.go:472> Create Admin Web Manager
+2021/06/18 16:36:10 [ INFO] <web.go:479> Create Streams Download Manager
+2021/06/18 16:36:10 [ INFO] <server.go:288> loadConfig
+2021/06/18 16:36:10 [ INFO] <server.go:305> loadConfig Open config.json Success
+2021/06/18 16:36:10 [ INFO] <server.go:331> StreamsDownload Current Stream Count=1...
+2021/06/18 16:36:20 [ERROR] <server.go:73> [channel1]Download DownloadM3u8 err=Get "http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8": dial tcp: i/o timeout ulr=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8 timeout=10
+2021/06/18 16:36:27 [ INFO] <web.go:195> ---->>>>GetIndexStream Request clientIP=192.168.1.16****
+2021/06/18 16:36:27 [ INFO] <web.go:233> ---->>>>GetTsStream Request clientIP=192.168.1.16****
+2021/06/18 16:36:27 [ INFO] <web.go:233> ---->>>>GetTsStream Request clientIP=192.168.1.16****
+2021/06/18 16:36:33 [ INFO] <web.go:233> ---->>>>GetTsStream Request clientIP=192.168.1.16****
+2021/06/18 18:08:50 [ INFO] <main.go:149> download_encryption.debug Version=1.0.1 Build Time=[Jun 18 2021  18:08:46]
+2021/06/18 18:08:50 [ INFO] <main.go:153> Start configLoad
+2021/06/18 18:08:50 [ INFO] <main.go:124> (c *ConfigBusiness) configLoad Open config.json Success
+2021/06/18 18:08:50 [ INFO] <main.go:136> (c *ConfigBusiness) configLoad config.json 
+ adminListen=0.0.0.0:18086
+ channelListen=0.0.0.0:18085
+
+2021/06/18 18:08:50 [ INFO] <main.go:160> Create Web Manager
+2021/06/18 18:08:50 [ INFO] <web.go:364> getStreamConfig
+2021/06/18 18:08:50 [ INFO] <web.go:380> loadConfig Open config.json Success
+2021/06/18 18:08:50 [ERROR] <web.go:385> loadConfig json.Unmarshal Failed invalid character '"' after object key:value pair
+2021/06/18 18:08:50 [ INFO] <web.go:396> getAdminsConfig
+2021/06/18 18:08:50 [ INFO] <web.go:412> getAdminsConfig Open config.json Success
+2021/06/18 18:08:50 [ INFO] <web.go:467> Create Channel Web Manager
+2021/06/18 18:08:50 [ INFO] <web.go:474> Create Admin Web Manager
+2021/06/18 18:08:50 [ INFO] <web.go:481> Create Streams Download Manager
+2021/06/18 18:08:50 [ INFO] <server.go:296> loadConfig
+2021/06/18 18:09:04 [ INFO] <server.go:313> loadConfig Open config.json Success
+2021/06/18 18:09:08 [ERROR] <server.go:318> loadConfig json.Unmarshal Failed invalid character '"' after object key:value pair
+2021/06/18 18:45:51 [ INFO] <main.go:149> download_encryption.debug Version=1.0.1 Build Time=[Jun 18 2021  18:08:46]
+2021/06/18 18:45:51 [ INFO] <main.go:153> Start configLoad
+2021/06/18 18:45:51 [ INFO] <main.go:124> (c *ConfigBusiness) configLoad Open config.json Success
+2021/06/18 18:45:51 [ INFO] <main.go:136> (c *ConfigBusiness) configLoad config.json 
+ adminListen=0.0.0.0:18086
+ channelListen=0.0.0.0:18085
+
+2021/06/18 18:45:51 [ INFO] <main.go:160> Create Web Manager
+2021/06/18 18:45:51 [ INFO] <web.go:364> getStreamConfig
+2021/06/18 18:45:51 [ INFO] <web.go:380> loadConfig Open config.json Success
+2021/06/18 18:45:51 [ INFO] <web.go:396> getAdminsConfig
+2021/06/18 18:45:51 [ INFO] <web.go:412> getAdminsConfig Open config.json Success
+2021/06/18 18:45:51 [ INFO] <web.go:467> Create Channel Web Manager
+2021/06/18 18:45:51 [ INFO] <web.go:474> Create Admin Web Manager
+2021/06/18 18:45:51 [ INFO] <web.go:481> Create Streams Download Manager
+2021/06/18 18:45:51 [ INFO] <server.go:296> loadConfig
+2021/06/18 18:45:54 [ INFO] <server.go:313> loadConfig Open config.json Success
+2021/06/18 18:45:54 [ INFO] <server.go:339> StreamsDownload Current Stream Count=1...
+2021/06/18 18:45:54 [DEBUG] <server.go:242> [channel1]HandleParseM3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/18 18:45:55 [DEBUG] <server.go:248> [channel1]HandleDownloadedM3u8 uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/18 18:45:55 [DEBUG] <server.go:252> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624013120_7237655.ts localFile=/data/src/channel1/cctv1_2md/1624013120_7237655.ts
+2021/06/18 18:45:55 [DEBUG] <server.go:252> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624013140_7237657.ts localFile=/data/src/channel1/cctv1_2md/1624013140_7237657.ts
+2021/06/18 18:45:55 [DEBUG] <server.go:252> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624013130_7237656.ts localFile=/data/src/channel1/cctv1_2md/1624013130_7237656.ts
+2021/06/18 18:45:55 [DEBUG] <server.go:252> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624013150_7237658.ts localFile=/data/src/channel1/cctv1_2md/1624013150_7237658.ts
+2021/06/18 18:47:19 [ INFO] <main.go:149> download_encryption.debug Version=1.0.1 Build Time=[Jun 18 2021  18:47:15]
+2021/06/18 18:47:19 [ INFO] <main.go:153> Start configLoad
+2021/06/18 18:47:19 [ INFO] <main.go:124> (c *ConfigBusiness) configLoad Open config.json Success
+2021/06/18 18:47:19 [ INFO] <main.go:136> (c *ConfigBusiness) configLoad config.json 
+ adminListen=0.0.0.0:18086
+ channelListen=0.0.0.0:18085
+
+2021/06/18 18:47:19 [ INFO] <main.go:160> Create Web Manager
+2021/06/18 18:47:19 [ INFO] <web.go:364> getStreamConfig
+2021/06/18 18:47:19 [ INFO] <web.go:380> loadConfig Open config.json Success
+2021/06/18 18:47:19 [ INFO] <web.go:396> getAdminsConfig
+2021/06/18 18:47:19 [ INFO] <web.go:412> getAdminsConfig Open config.json Success
+2021/06/18 18:47:19 [ INFO] <web.go:467> Create Channel Web Manager
+2021/06/18 18:47:19 [ INFO] <web.go:474> Create Admin Web Manager
+2021/06/18 18:47:19 [ INFO] <web.go:481> Create Streams Download Manager
+2021/06/18 18:47:19 [ INFO] <server.go:290> loadConfig
+2021/06/18 18:47:19 [ INFO] <server.go:307> loadConfig Open config.json Success
+2021/06/18 18:47:19 [ INFO] <server.go:333> StreamsDownload Current Stream Count=1...
+2021/06/18 18:47:19 [DEBUG] <server.go:242> [channel1]HandleParseM3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/18 18:47:20 [DEBUG] <server.go:248> [channel1]HandleDownloadedM3u8 uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/18 18:47:20 [DEBUG] <server.go:252> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624013214_7237664.ts localFile=/data/src/channel1/cctv1_2md/1624013214_7237664.ts
+2021/06/18 18:47:20 [DEBUG] <server.go:252> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624013203_7237663.ts localFile=/data/src/channel1/cctv1_2md/1624013203_7237663.ts
+2021/06/18 18:47:20 [DEBUG] <server.go:252> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624013234_7237666.ts localFile=/data/src/channel1/cctv1_2md/1624013234_7237666.ts
+2021/06/18 18:47:20 [DEBUG] <server.go:252> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624013224_7237665.ts localFile=/data/src/channel1/cctv1_2md/1624013224_7237665.ts
+2021/06/18 18:47:26 [DEBUG] <server.go:242> [channel1]HandleParseM3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/18 18:47:27 [DEBUG] <server.go:248> [channel1]HandleDownloadedM3u8 uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/18 18:47:27 [DEBUG] <server.go:252> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624013245_7237667.ts localFile=/data/src/channel1/cctv1_2md/1624013245_7237667.ts
+2021/06/18 18:47:38 [DEBUG] <server.go:242> [channel1]HandleParseM3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/18 18:47:59 [DEBUG] <server.go:248> [channel1]HandleDownloadedM3u8 uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/18 18:47:59 [DEBUG] <server.go:252> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624013256_7237668.ts localFile=/data/src/channel1/cctv1_2md/1624013256_7237668.ts
+2021/06/18 18:48:04 [DEBUG] <server.go:242> [channel1]HandleParseM3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/18 18:48:04 [DEBUG] <server.go:252> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624013266_7237669.ts localFile=/data/src/channel1/cctv1_2md/1624013266_7237669.ts
+2021/06/18 18:48:05 [DEBUG] <server.go:248> [channel1]HandleDownloadedM3u8 uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/18 18:48:05 [DEBUG] <server.go:252> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624013277_7237670.ts localFile=/data/src/channel1/cctv1_2md/1624013277_7237670.ts
+2021/06/18 21:58:19 [ INFO] <main.go:149> src.debug Version=1.0.1 Build Time=[Jun 18 2021  21:58:12]
+2021/06/18 21:58:19 [ INFO] <main.go:153> Start configLoad
+2021/06/18 21:58:19 [ INFO] <main.go:124> (c *ConfigBusiness) configLoad Open config.json Success
+2021/06/18 21:58:19 [ INFO] <main.go:136> (c *ConfigBusiness) configLoad config.json 
+ adminListen=0.0.0.0:18086
+ channelListen=0.0.0.0:18085
+
+2021/06/18 21:58:19 [ INFO] <main.go:160> Create Web Manager
+2021/06/18 21:58:19 [ INFO] <web.go:364> getStreamConfig
+2021/06/18 21:58:19 [ INFO] <web.go:380> loadConfig Open config.json Success
+2021/06/18 21:58:19 [ INFO] <web.go:396> getAdminsConfig
+2021/06/18 21:58:19 [ INFO] <web.go:412> getAdminsConfig Open config.json Success
+2021/06/18 21:58:19 [ INFO] <web.go:467> Create Channel Web Manager
+2021/06/18 21:58:19 [ INFO] <web.go:474> Create Admin Web Manager
+2021/06/18 21:58:19 [ INFO] <web.go:481> Create Streams Download Manager
+2021/06/18 21:58:19 [ INFO] <server.go:290> loadConfig
+2021/06/18 21:58:19 [ INFO] <server.go:307> loadConfig Open config.json Success
+2021/06/18 21:58:19 [ INFO] <server.go:333> StreamsDownload Current Stream Count=1...
+2021/06/18 21:58:22 [DEBUG] <server.go:242> [channel1]HandleParseM3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/18 21:58:23 [DEBUG] <server.go:242> [channel1]HandleParseM3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/18 21:58:27 [DEBUG] <server.go:252> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624024808_7238773.ts? localFile=/data/src/channel1/cctv1_2md/1624024808_7238773.ts
+2021/06/18 21:58:27 [DEBUG] <server.go:248> [channel1]HandleDownloadedM3u8 uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/18 21:58:35 [DEBUG] <server.go:242> [channel1]HandleParseM3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/18 21:58:35 [DEBUG] <server.go:248> [channel1]HandleDownloadedM3u8 uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/18 21:58:35 [DEBUG] <server.go:252> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624024776_7238770.ts? localFile=/data/src/channel1/cctv1_2md/1624024776_7238770.ts
+2021/06/18 21:58:35 [DEBUG] <server.go:252> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624024766_7238769.ts? localFile=/data/src/channel1/cctv1_2md/1624024766_7238769.ts
+2021/06/18 21:58:35 [DEBUG] <server.go:252> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624024798_7238772.ts? localFile=/data/src/channel1/cctv1_2md/1624024798_7238772.ts
+2021/06/18 21:58:35 [DEBUG] <server.go:252> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624024787_7238771.ts? localFile=/data/src/channel1/cctv1_2md/1624024787_7238771.ts
+2021/06/18 21:58:39 [DEBUG] <server.go:248> [channel1]HandleDownloadedM3u8 uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/18 21:58:39 [DEBUG] <server.go:252> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624024818_7238774.ts? localFile=/data/src/channel1/cctv1_2md/1624024818_7238774.ts

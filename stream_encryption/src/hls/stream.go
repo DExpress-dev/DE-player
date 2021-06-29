@@ -56,6 +56,7 @@ type StreamCallback struct {
 
 type Stream struct {
 	Key             string
+	IV              string
 	M3u8Url         string
 	M3u8UrlInfo     *url.URL
 	M3u8Name        string
@@ -93,6 +94,7 @@ func NewStream(key, m3u8Url, localPath string) *Stream {
 	}
 	stream := &Stream{
 		Key:          key,
+		IV:           key,
 		M3u8Url:      m3u8Url,
 		LocalPath:    localPath,
 		LastSequence: -1,

@@ -62,6 +62,7 @@ type Stream struct {
 
 	SrcPath        string
 	Key            string
+	IV             string
 	EncryptionPath string
 
 	M3u8File       string
@@ -92,7 +93,7 @@ type Stream struct {
 	Callback StreamCallback
 }
 
-func NewStream(channelName, m3u8Url, srcPath, key, encryptionPath string) *Stream {
+func NewStream(channelName, m3u8Url, srcPath, key, iv, encryptionPath string) *Stream {
 
 	srcPath = strings.TrimSpace(srcPath)
 	if strings.HasSuffix(srcPath, "/") {
@@ -104,6 +105,7 @@ func NewStream(channelName, m3u8Url, srcPath, key, encryptionPath string) *Strea
 		M3u8Url:        m3u8Url,
 		SrcPath:        srcPath,
 		Key:            key,
+		IV:             iv,
 		EncryptionPath: encryptionPath,
 		LastSequence:   -1,
 		Timeout:        5,
@@ -201,7 +203,7 @@ func (stream *Stream) AddStream(m3u8Url string) *Stream {
 	stream.Lock.Lock()
 	defer stream.Lock.Unlock()
 	m3u8UrlInfo, _ := url.Parse(m3u8Url)
-	stream.Streams[m3u8UrlInfo.Path] = NewStream(stream.ChannelName, m3u8Url, stream.SrcPath, stream.Key, stream.EncryptionPath).
+	stream.Streams[m3u8UrlInfo.Path] = NewStream(stream.ChannelName, m3u8Url, stream.SrcPath, stream.Key, stream.IV, stream.EncryptionPath).
 		SetTimeout(stream.Timeout).
 		SetRetryCount(stream.RetryCount).
 		SetRetryWait(stream.RetryWait).
@@ -213,10 +215,10 @@ func (stream *Stream) AddStream(m3u8Url string) *Stream {
 	return stream.Streams[m3u8UrlInfo.Path]
 }
 
-func (stream *Stream) doDownloadTs(tsUrl, tsSrcFile, key, encryptionFile string) (size int64, err error) {
+func (stream *Stream) doDownloadTs(tsUrl, tsSrcFile, key, iv, encryptionFile string) (size int64, err error) {
 
 	if stream.SaveTs && tsSrcFile != "" {
-		size, err = httputils.DownloadFile(tsUrl, tsSrcFile, key, encryptionFile, stream.Timeout)
+		size, err = httputils.DownloadFile(tsUrl, tsSrcFile, key, iv, encryptionFile, stream.Timeout)
 	} else {
 		buf := new(bytes.Buffer)
 		size, err = httputils.DownloadBuffer(tsUrl, stream.Timeout, buf)
@@ -247,7 +249,7 @@ func (stream *Stream) downloadTs(ts *Ts, results chan<- *Ts) {
 		retryCount := 0
 		for retryCount < stream.RetryCount {
 
-			size, err := stream.doDownloadTs(ts.TsUrl, ts.SrcFile, stream.Key, ts.EncryptionFile)
+			size, err := stream.doDownloadTs(ts.TsUrl, ts.SrcFile, stream.Key, stream.IV, ts.EncryptionFile)
 			if err == nil {
 				ts.Status = TsStatusOk
 				ts.Size = size

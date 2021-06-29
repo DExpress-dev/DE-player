@@ -44,6 +44,7 @@ type AddStreamRequest struct {
 	PushUrl        string `json:"pushUrl"`        //推送地址
 	SrcPath        string `json:"SrcPath"`        //本地保存地址
 	Key            string `json:"key"`            //加密密钥
+	IV             string `json:"iv"`             //加密向量
 	EncryptionPath string `json:"encryptionPath"` //加密密钥
 }
 
@@ -77,7 +78,7 @@ type WebManager struct {
 
 var (
 	logFilePath = "./"
-	logFileName = "download_excryption.log"
+	logFileName = "download_encryption.log"
 )
 
 //解决跨域问题
@@ -316,6 +317,7 @@ func (wm *WebManager) AddStream(c *gin.Context) {
 		request.PushUrl,
 		request.SrcPath,
 		request.Key,
+		request.IV,
 		request.EncryptionPath)
 
 	//
@@ -349,7 +351,7 @@ func (wm *WebManager) DeleteStream(c *gin.Context) {
 	}
 
 	//添加流
-	wm.streamDownload.StreamAdd(request.ChannelName, request.SourceUrl, request.PushUrl, request.SrcPath, request.Key, request.EncryptionPath)
+	wm.streamDownload.StreamAdd(request.ChannelName, request.SourceUrl, request.PushUrl, request.SrcPath, request.Key, request.IV, request.EncryptionPath)
 
 	//
 	c.JSON(http.StatusOK, gin.H{

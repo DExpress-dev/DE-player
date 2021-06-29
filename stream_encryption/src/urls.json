@@ -6,6 +6,7 @@
 		"pushUrl":"",
 		"srcPath":"/data/src/channel1",
 		"key":"ABCDABCDABCDABCD",
+		"iv":"ABCDABCDABCDABCD",
 		"encryptionPath":"/data/encryption/channel1"
         }
     ]

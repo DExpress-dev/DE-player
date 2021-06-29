@@ -24,7 +24,7 @@ import (
 
 //版本号
 var (
-	ver       string = "1.0.1"
+	ver       string = "1.0.2"
 	exeName   string = "Download Encryption"
 	buildTime string = C.GoString(C.build_time())
 )

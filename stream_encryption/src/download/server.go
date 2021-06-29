@@ -25,6 +25,7 @@ type StreamConfig struct {
 	PushUrl        string `json:"pushUrl"`        //推送给第三方地址
 	SrcPath        string `json:"srcPath"`        //源流保存地址
 	Key            string `json:"key"`            //加密密钥
+	IV             string `json:"iv"`             //加密向量
 	EncryptionPath string `json:"encryptionPath"` //加密流保存地址
 }
 
@@ -45,6 +46,7 @@ type StreamDownload struct {
 	PushUrl         string
 	SrcPath         string
 	Key             string
+	IV              string
 	EncryptionPath  string
 	AntileechRemote string
 	M3u8FailCount   int
@@ -63,6 +65,7 @@ func (s *StreamDownload) Download() {
 		s.StreamUrl,
 		s.SrcPath,
 		s.Key,
+		s.IV,
 		s.EncryptionPath).
 		SetTimeout(config.GetInstance().Config.Download.Timeout).
 		SetRetryCount(config.GetInstance().Config.Download.RetryCount).
@@ -271,7 +274,7 @@ type StreamsDownload struct {
 	streamMap       map[string]*StreamDownload
 }
 
-func (server *StreamsDownload) StreamAdd(channelName, streamUrl, pushUrl, srcPath, key, encryptionPath string) *StreamDownload {
+func (server *StreamsDownload) StreamAdd(channelName, streamUrl, pushUrl, srcPath, key, iv, encryptionPath string) *StreamDownload {
 
 	if channelName == "" || streamUrl == "" || (pushUrl == "" && srcPath == "") {
 		return nil
@@ -291,6 +294,7 @@ func (server *StreamsDownload) StreamAdd(channelName, streamUrl, pushUrl, srcPat
 		PushUrl:         pushUrl,
 		SrcPath:         srcPath,
 		Key:             key,
+		IV:              iv,
 		EncryptionPath:  encryptionPath,
 		LastM3u8Time:    time.Now(),
 		IndexM3u8Pushed: false,
@@ -328,7 +332,7 @@ func (server *StreamsDownload) loadConfig() {
 	}
 
 	for _, v := range server.Streams.Stream {
-		server.StreamAdd(v.ChannelName, v.SourceUrl, v.PushUrl, v.SrcPath, v.Key, v.EncryptionPath)
+		server.StreamAdd(v.ChannelName, v.SourceUrl, v.PushUrl, v.SrcPath, v.Key, v.IV, v.EncryptionPath)
 	}
 }
 

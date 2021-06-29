@@ -1,0 +1,41 @@
+2021/06/29 16:05:46 [ INFO] <main.go:150> src.debug Version=1.0.1 Build Time=[Jun 29 2021  16:05:42]
+2021/06/29 16:05:46 [ INFO] <main.go:154> Start configLoad
+2021/06/29 16:05:46 [ INFO] <main.go:125> (c *ConfigBusiness) configLoad Open config.json Success
+2021/06/29 16:05:46 [ INFO] <main.go:137> (c *ConfigBusiness) configLoad config.json 
+ adminListen=0.0.0.0:18086
+ channelListen=0.0.0.0:18085
+
+2021/06/29 16:10:19 [ INFO] <main.go:150> src.debug Version=1.0.1 Build Time=[Jun 29 2021  16:10:16]
+2021/06/29 16:10:19 [ INFO] <main.go:154> Start configLoad
+2021/06/29 16:10:19 [ INFO] <main.go:125> (c *ConfigBusiness) configLoad Open config.json Success
+2021/06/29 16:10:19 [ INFO] <main.go:137> (c *ConfigBusiness) configLoad config.json 
+ adminListen=0.0.0.0:18086
+ channelListen=0.0.0.0:18085
+
+2021/06/29 16:14:12 [ INFO] <main.go:150> src.debug Version=1.0.1 Build Time=[Jun 29 2021  16:13:39]
+2021/06/29 16:14:12 [ INFO] <main.go:154> Start configLoad
+2021/06/29 16:14:12 [ INFO] <main.go:125> (c *ConfigBusiness) configLoad Open config.json Success
+2021/06/29 16:14:12 [ INFO] <main.go:137> (c *ConfigBusiness) configLoad config.json 
+ adminListen=0.0.0.0:18086
+ channelListen=0.0.0.0:18085
+
+2021/06/29 16:14:12 [ INFO] <main.go:164> Create Web Manager
+2021/06/29 16:14:12 [ INFO] <web.go:386> getStreamConfig
+2021/06/29 16:14:12 [ INFO] <web.go:402> loadConfig Open config.json Success
+2021/06/29 16:14:12 [ INFO] <web.go:421> getAdminsConfig
+2021/06/29 16:14:12 [ INFO] <web.go:437> getAdminsConfig Open config.json Success
+2021/06/29 16:14:12 [ INFO] <web.go:492> Create Channel Web Manager
+2021/06/29 16:14:12 [ INFO] <web.go:499> Create Admin Web Manager
+2021/06/29 16:14:12 [ INFO] <web.go:506> Create Streams Download Manager
+2021/06/29 16:14:12 [ INFO] <server.go:310> loadConfig
+2021/06/29 16:14:12 [ INFO] <server.go:325> loadConfig Open config.json Success
+2021/06/29 16:14:12 [ INFO] <server.go:353> StreamsDownload Current Stream Count=1...
+2021/06/29 16:14:12 [DEBUG] <server.go:257> [channel1]HandleParseM3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/29 16:14:12 [DEBUG] <server.go:263> [channel1]HandleDownloadedM3u8 uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/29 16:14:12 [DEBUG] <server.go:267> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624954412_7327568.ts localFile=/data/src/channel1/cctv1_2md/1624954412_7327568.ts
+2021/06/29 16:14:12 [DEBUG] <server.go:267> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624954443_7327571.ts localFile=/data/src/channel1/cctv1_2md/1624954443_7327571.ts
+2021/06/29 16:14:12 [DEBUG] <server.go:267> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624954432_7327570.ts localFile=/data/src/channel1/cctv1_2md/1624954432_7327570.ts
+2021/06/29 16:14:12 [DEBUG] <server.go:267> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624954422_7327569.ts localFile=/data/src/channel1/cctv1_2md/1624954422_7327569.ts
+2021/06/29 16:14:15 [DEBUG] <server.go:257> [channel1]HandleParseM3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/29 16:14:15 [DEBUG] <server.go:263> [channel1]HandleDownloadedM3u8 uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8 localFile=/data/src/channel1/index.m3u8
+2021/06/29 16:14:15 [DEBUG] <server.go:267> [channel1]HandleDownloadedTs uri=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/cctv1_2md/1624954454_7327572.ts localFile=/data/src/channel1/cctv1_2md/1624954454_7327572.ts
