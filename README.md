@@ -7,7 +7,7 @@ DExpress 独立研发的播放器，针对当前播放器采用简单的hls协�
 
 ## 目录说明：
 
-### download_encryption
+### stream_encryption
 	HLS协议视频下载和加密进程，download_encryption功能为：
 	
 	1：根据用户设置拉取相应的视频流到本地。
