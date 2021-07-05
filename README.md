@@ -48,7 +48,7 @@ The player independently developed by DE-player is a player that uses a simple h
 	stream_player can automatically call the interface for obtaining the secret key, and decrypt 
 	and play the corresponding TS audio and video files.
 	
-	3：自动选择播放器：对于解码性能不足的盒子（很多盒子可以采用系统播放器进行硬解码，但是无法采用Mediacodec进行解码）
+	3：自动选择播放器：对于解码性能不足的盒子（很多可以采用系统播放器进行硬解码，但无法采用Mediacodec进行解码）
 	stream_player可以根据盒子的型号等进行自动选择播放器类型。
 	3：Automatically select player: For boxes with insufficient decoding performance (many boxes can use 
 	system players for hard decoding, but Mediacodec cannot be used for decoding), stream_player can 
