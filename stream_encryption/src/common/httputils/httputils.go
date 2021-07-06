@@ -3,9 +3,9 @@ package httputils
 import (
 	"bufio"
 	"bytes"
+	"common/encryption"
 	"common/utils"
 	"crypto/tls"
-	"download_encryption/src/common/encryption"
 	"fmt"
 	"io"
 	"net"

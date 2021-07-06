@@ -153,7 +153,12 @@ func (s *StreamDownload) getFileCreateTime(path string) int64 {
 	if fileInfo, err := os.Stat(path); err == nil {
 		if osType == "linux" {
 			stat_t := fileInfo.Sys().(*syscall.Stat_t)
-			tCreate := int64(stat_t.Ctim.Sec)
+			tCreate := int64(stat_t.Ctimespec.Sec) //linux 用 Ctim；
+			/*windows 用
+			wFileSys := fileInfo.Sys().(*syscall.Win32FileAttributeData)
+			tNanSeconds := wFileSys.CreationTime.Nanoseconds() /// 返回的是纳秒
+			tSec := tNanSeconds / 1e9                          ///秒 */
+
 			return tCreate
 		}
 	}
