@@ -1,0 +1,664 @@
+**** STATS ****
+
+
+==== X Baseline ====
+     BENCHMARK INIT: 2021-05-14 16:29:39.165983674 -0400 EDT m=+0.001636890
+     Benchmark: 
+     	Struct recursive Depth:             1
+     	ApproxDeepSize Of benchmark Struct: 107024 bytes
+     Benchmark One-Pass Run (with Unscientific Encode/Decode times): 
+     	   msgpack: len: 38646 bytes,	 encode: 366.513µs,	 decode: 221.494µs,	encoded == decoded
+     	      binc: len: 38326 bytes,	 encode: 249.692µs,	 decode: 199.862µs,	encoded == decoded
+     	    simple: len: 40323 bytes,	 encode: 165.703µs,	 decode: 189.36µs,	encoded == decoded
+     	      cbor: len: 38414 bytes,	 encode: 186.987µs,	 decode: 210.555µs,	encoded == decoded
+     	      json: len: 47148 bytes,	 encode: 290.033µs,	 decode: 564.431µs,	encoded == decoded
+     	  std-json: len: 46900 bytes,	 encode: 433.767µs,	 decode: 1.168831ms,	encoded == decoded
+     	       gob: len: 36444 bytes,	 encode: 406.406µs,	 decode: 315.989µs,	encoded != decoded: Not Match
+     	   std-xml: **** Error encoding benchTs: xml: unsupported type: map[string]int
+     	 json-iter: len: 46908 bytes,	 encode: 822.853µs,	 decode: 1.028034ms,	encoded == decoded
+     	 v-msgpack: len: 44490 bytes,	 encode: 331.179µs,	 decode: 389.643µs,	encoded == decoded
+     	      bson: len: 52470 bytes,	 encode: 464.087µs,	 decode: 535.926µs,	encoded == decoded
+     	   mgobson: len: 52675 bytes,	 encode: 446.039µs,	 decode: 511.381µs,	encoded != decoded: Not Match
+     	    fxcbor: len: 38414 bytes,	 encode: 225.299µs,	 decode: 327.608µs,	encoded == decoded
+     	     gcbor: **** Error decoding into new TestStruc: can't read map into **codec.stringUint64T
+     	       xdr: **** Error encoding benchTs: xdr:encode: type 'invalid' is not valid
+     	    sereal: len: 28737 bytes,	 encode: 369.635µs,	 decode: 221.676µs,	encoded != decoded: Not Match
+
+==== X Generated ====
+     BENCHMARK INIT: 2021-05-14 16:29:39.72429369 -0400 EDT m=+0.001336034
+     Benchmark: 
+     	Struct recursive Depth:             1
+     	ApproxDeepSize Of benchmark Struct: 107024 bytes
+     Benchmark One-Pass Run (with Unscientific Encode/Decode times): 
+     	   msgpack: len: 38646 bytes,	 encode: 252.3µs,	 decode: 144.479µs,	encoded == decoded
+     	      binc: len: 38326 bytes,	 encode: 186.602µs,	 decode: 141.408µs,	encoded == decoded
+     	    simple: len: 40323 bytes,	 encode: 83.816µs,	 decode: 122.348µs,	encoded == decoded
+     	      cbor: len: 38414 bytes,	 encode: 114.105µs,	 decode: 135.914µs,	encoded == decoded
+     	      json: len: 47148 bytes,	 encode: 347.413µs,	 decode: 510.378µs,	encoded == decoded
+     	      msgp: len: 38546 bytes,	 encode: 68.975µs,	 decode: 102.622µs,	encoded != decoded: Not Match
+     	  easyjson: len: 45640 bytes,	 encode: 191.761µs,	 decode: 507.612µs,	encoded != decoded: Not Match
+     	    ffjson: len: 46820 bytes,	 encode: 524.839µs,	 decode: 476.702µs,	encoded == decoded
+**** SUITE ****
+
+>>>> bench TAGS: 'alltests x ' SUITE: BenchmarkCodecXSuite
+>>>> Skipping - these cannot (en|de)code TestStruc - encode (xml, gcbor, xdr), decode (xml, gcbor, xdr, sereal)
+
+BenchmarkCodecXSuite/options-false.../Benchmark__Msgpack____Encode-8         	   19921	     60668 ns/op	      24 B/op	       1 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Binc_______Encode-8         	   18564	     63640 ns/op	      24 B/op	       1 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Simple_____Encode-8         	   20442	     58622 ns/op	      24 B/op	       1 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Cbor_______Encode-8         	   20648	     57917 ns/op	      24 B/op	       1 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Json_______Encode-8         	    8236	    145447 ns/op	      24 B/op	       1 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Std_Json___Encode-8         	    5856	    204346 ns/op	   80920 B/op	     564 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Gob________Encode-8         	    8127	    143042 ns/op	  174173 B/op	     683 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__JsonIter___Encode-8         	    8599	    146472 ns/op	   54435 B/op	      80 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Bson_______Encode-8         	    4610	    273211 ns/op	  242263 B/op	    1181 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Mgobson____Encode-8         	    2804	    384901 ns/op	  300328 B/op	    1877 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__VMsgpack___Encode-8         	    6778	    174569 ns/op	  164607 B/op	     360 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Fxcbor_____Encode-8         	   12088	    103594 ns/op	   52004 B/op	     400 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Sereal_____Encode-8         	    3730	    323059 ns/op	  276363 B/op	    3387 allocs/op
+
+BenchmarkCodecXSuite/options-false.../Benchmark__Msgpack____Decode-8         	    9120	    130824 ns/op	   37412 B/op	     315 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Binc_______Decode-8         	    9300	    131351 ns/op	   37411 B/op	     315 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Simple_____Decode-8         	    9301	    129361 ns/op	   37413 B/op	     315 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Cbor_______Decode-8         	    8650	    141389 ns/op	   37412 B/op	     315 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Json_______Decode-8         	    2733	    444945 ns/op	   71543 B/op	     503 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Std_Json___Decode-8         	    1249	    962975 ns/op	  137174 B/op	    3114 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Gob________Decode-8         	    4587	    262740 ns/op	  159398 B/op	    2329 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__JsonIter___Decode-8         	    2449	    500850 ns/op	  132692 B/op	    2654 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Bson_______Decode-8         	    2623	    453897 ns/op	  191030 B/op	    4544 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Mgobson____Decode-8         	    2314	    497230 ns/op	  168692 B/op	    6776 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__VMsgpack___Decode-8         	    3768	    346084 ns/op	  100176 B/op	    2030 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Fxcbor_____Decode-8         	    5540	    222119 ns/op	   72469 B/op	    1395 allocs/op
+
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Msgpack____Encode-8         	   16581	     71613 ns/op	      72 B/op	       2 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Binc_______Encode-8         	   15687	     75919 ns/op	      72 B/op	       2 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Simple_____Encode-8         	   15512	     77412 ns/op	      72 B/op	       2 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Cbor_______Encode-8         	   16744	     72742 ns/op	      72 B/op	       2 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Json_______Encode-8         	    7340	    160556 ns/op	      72 B/op	       2 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Std_Json___Encode-8         	    6271	    190931 ns/op	   31742 B/op	     564 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Gob________Encode-8         	    8252	    149851 ns/op	  174174 B/op	     683 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__JsonIter___Encode-8         	    6453	    186709 ns/op	  215826 B/op	      98 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Bson_______Encode-8         	    4363	    272422 ns/op	  242279 B/op	    1181 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Mgobson____Encode-8         	    3338	    362093 ns/op	  300359 B/op	    1877 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__VMsgpack___Encode-8         	    8346	    146637 ns/op	   14064 B/op	     353 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Fxcbor_____Encode-8         	   10000	    112035 ns/op	  127336 B/op	     408 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Sereal_____Encode-8         	    3796	    318875 ns/op	  276452 B/op	    3387 allocs/op
+
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Msgpack____Decode-8         	    5646	    218676 ns/op	   84312 B/op	    2134 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Binc_______Decode-8         	    5409	    212781 ns/op	   82720 B/op	    1669 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Simple_____Decode-8         	    5692	    215007 ns/op	   83307 B/op	    1753 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Cbor_______Decode-8         	    5478	    219024 ns/op	   83483 B/op	    1756 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Json_______Decode-8         	    2083	    579367 ns/op	   90719 B/op	    1176 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Std_Json___Decode-8         	    1178	   1034833 ns/op	  266531 B/op	    3126 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Gob________Decode-8         	    4514	    263904 ns/op	  159406 B/op	    2329 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__JsonIter___Decode-8         	    2341	    529015 ns/op	  136555 B/op	    2785 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Bson_______Decode-8         	    2757	    444623 ns/op	  190995 B/op	    4544 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Mgobson____Decode-8         	    2499	    503158 ns/op	  168718 B/op	    6776 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__VMsgpack___Decode-8         	    3682	    324744 ns/op	  101251 B/op	    2034 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Fxcbor_____Decode-8         	    4220	    314118 ns/op	  201558 B/op	    1403 allocs/op
+
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Msgpack____Encode-8         	   19849	     63198 ns/op	      24 B/op	       1 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Binc_______Encode-8         	   18716	     64500 ns/op	      24 B/op	       1 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Simple_____Encode-8         	   20545	     59542 ns/op	      24 B/op	       1 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Cbor_______Encode-8         	   19279	     59421 ns/op	      24 B/op	       1 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Json_______Encode-8         	    8259	    142031 ns/op	      24 B/op	       1 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Std_Json___Encode-8         	    5932	    199047 ns/op	   80865 B/op	     564 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Gob________Encode-8         	    7995	    154718 ns/op	  174174 B/op	     683 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__JsonIter___Encode-8         	    8323	    146783 ns/op	   54438 B/op	      80 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Bson_______Encode-8         	    3667	    329416 ns/op	  242278 B/op	    1181 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Mgobson____Encode-8         	    2755	    404436 ns/op	  300343 B/op	    1877 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__VMsgpack___Encode-8         	    6595	    184649 ns/op	  164609 B/op	     360 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Fxcbor_____Encode-8         	   12429	     97417 ns/op	   52320 B/op	     400 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Sereal_____Encode-8         	    3687	    328148 ns/op	  276284 B/op	    3387 allocs/op
+
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Msgpack____Decode-8         	    9158	    130448 ns/op	   37413 B/op	     315 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Binc_______Decode-8         	    9232	    132227 ns/op	   37412 B/op	     315 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Simple_____Decode-8         	    9169	    130616 ns/op	   37412 B/op	     315 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Cbor_______Decode-8         	    8493	    144925 ns/op	   37410 B/op	     315 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Json_______Decode-8         	    2691	    455012 ns/op	   71553 B/op	     503 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Std_Json___Decode-8         	    1244	    973928 ns/op	  137159 B/op	    3114 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Gob________Decode-8         	    4482	    295432 ns/op	  159412 B/op	    2329 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__JsonIter___Decode-8         	    2301	    509920 ns/op	  132701 B/op	    2654 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Bson_______Decode-8         	    2751	    439466 ns/op	  190990 B/op	    4544 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Mgobson____Decode-8         	    2530	    478998 ns/op	  168719 B/op	    6776 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__VMsgpack___Decode-8         	    3771	    325748 ns/op	  100133 B/op	    2030 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Fxcbor_____Decode-8         	    5535	    226527 ns/op	   72486 B/op	    1395 allocs/op
+>>>> bench TAGS: 'alltests x codec.safe' SUITE: BenchmarkCodecXSuite
+>>>> Skipping - these cannot (en|de)code TestStruc - encode (xml, gcbor, xdr), decode (xml, gcbor, xdr, sereal)
+
+BenchmarkCodecXSuite/options-false.../Benchmark__Msgpack____Encode-8         	   12508	     97244 ns/op	   10048 B/op	     381 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Binc_______Encode-8         	   12018	    100096 ns/op	   10048 B/op	     381 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Simple_____Encode-8         	   12460	     96906 ns/op	   10048 B/op	     381 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Cbor_______Encode-8         	   12072	     98063 ns/op	   10560 B/op	     389 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Json_______Encode-8         	    6463	    187055 ns/op	   10048 B/op	     381 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Std_Json___Encode-8         	    6196	    194492 ns/op	   80862 B/op	     564 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Gob________Encode-8         	    8366	    143429 ns/op	  174173 B/op	     683 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__JsonIter___Encode-8         	    8542	    147165 ns/op	   54435 B/op	      80 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Bson_______Encode-8         	    4352	    269383 ns/op	  242262 B/op	    1181 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Mgobson____Encode-8         	    3458	    354218 ns/op	  300323 B/op	    1877 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__VMsgpack___Encode-8         	    7003	    170581 ns/op	  164607 B/op	     360 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Fxcbor_____Encode-8         	   12081	     99013 ns/op	   51933 B/op	     400 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Sereal_____Encode-8         	    3819	    311395 ns/op	  275409 B/op	    3388 allocs/op
+
+BenchmarkCodecXSuite/options-false.../Benchmark__Msgpack____Decode-8         	    6511	    185428 ns/op	   70766 B/op	    1074 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Binc_______Decode-8         	    6566	    185200 ns/op	   70751 B/op	    1074 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Simple_____Decode-8         	    6688	    195531 ns/op	   70765 B/op	    1074 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Cbor_______Decode-8         	    6141	    201041 ns/op	   70769 B/op	    1074 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Json_______Decode-8         	    2385	    509687 ns/op	   96500 B/op	    1367 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Std_Json___Decode-8         	    1225	    975739 ns/op	  137149 B/op	    3114 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Gob________Decode-8         	    4600	    264000 ns/op	  159396 B/op	    2329 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__JsonIter___Decode-8         	    2388	    499741 ns/op	  132721 B/op	    2654 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Bson_______Decode-8         	    2738	    457763 ns/op	  190999 B/op	    4544 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Mgobson____Decode-8         	    2388	    493034 ns/op	  168738 B/op	    6776 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__VMsgpack___Decode-8         	    3577	    318827 ns/op	  100156 B/op	    2030 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Fxcbor_____Decode-8         	    5560	    218484 ns/op	   72469 B/op	    1395 allocs/op
+
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Msgpack____Encode-8         	   10000	    109717 ns/op	   10096 B/op	     382 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Binc_______Encode-8         	   10000	    116583 ns/op	   10096 B/op	     382 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Simple_____Encode-8         	   10000	    114072 ns/op	   10096 B/op	     382 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Cbor_______Encode-8         	   10000	    111166 ns/op	   10608 B/op	     390 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Json_______Encode-8         	    5775	    208427 ns/op	   10096 B/op	     382 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Std_Json___Encode-8         	    6390	    188407 ns/op	   31742 B/op	     564 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Gob________Encode-8         	    7950	    152079 ns/op	  174172 B/op	     683 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__JsonIter___Encode-8         	    6250	    194311 ns/op	  215826 B/op	      98 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Bson_______Encode-8         	    4455	    284700 ns/op	  242279 B/op	    1181 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Mgobson____Encode-8         	    3199	    371119 ns/op	  300350 B/op	    1877 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__VMsgpack___Encode-8         	    8707	    141924 ns/op	   14064 B/op	     353 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Fxcbor_____Encode-8         	   10000	    116713 ns/op	  127584 B/op	     408 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Sereal_____Encode-8         	    3445	    338842 ns/op	  275552 B/op	    3388 allocs/op
+
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Msgpack____Decode-8         	    4846	    243512 ns/op	   87375 B/op	    2271 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Binc_______Decode-8         	    5034	    241197 ns/op	   85759 B/op	    1807 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Simple_____Decode-8         	    4497	    243806 ns/op	   86527 B/op	    1895 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Cbor_______Decode-8         	    4753	    256538 ns/op	   86527 B/op	    1895 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Json_______Decode-8         	    1952	    737639 ns/op	   96871 B/op	    1457 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Std_Json___Decode-8         	     957	   1056185 ns/op	  266539 B/op	    3126 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Gob________Decode-8         	    4147	    268112 ns/op	  159396 B/op	    2329 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__JsonIter___Decode-8         	    2094	    529338 ns/op	  136682 B/op	    2788 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Bson_______Decode-8         	    2734	    452501 ns/op	  190983 B/op	    4544 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Mgobson____Decode-8         	    2306	    500279 ns/op	  168707 B/op	    6776 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__VMsgpack___Decode-8         	    3256	    340732 ns/op	  101244 B/op	    2034 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Fxcbor_____Decode-8         	    4202	    305388 ns/op	  201560 B/op	    1403 allocs/op
+
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Msgpack____Encode-8         	   12315	     98579 ns/op	   10048 B/op	     381 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Binc_______Encode-8         	   10000	    101253 ns/op	   10048 B/op	     381 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Simple_____Encode-8         	   12334	     96779 ns/op	   10048 B/op	     381 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Cbor_______Encode-8         	   12266	     98548 ns/op	   10560 B/op	     389 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Json_______Encode-8         	    6378	    189084 ns/op	   10048 B/op	     381 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Std_Json___Encode-8         	    6189	    198332 ns/op	   80846 B/op	     564 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Gob________Encode-8         	    7916	    156414 ns/op	  174176 B/op	     683 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__JsonIter___Encode-8         	    8199	    144153 ns/op	   54438 B/op	      80 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Bson_______Encode-8         	    3901	    294463 ns/op	  242278 B/op	    1181 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Mgobson____Encode-8         	    3248	    375554 ns/op	  300350 B/op	    1877 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__VMsgpack___Encode-8         	    6423	    190244 ns/op	  164610 B/op	     360 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Fxcbor_____Encode-8         	   10000	    100162 ns/op	   52216 B/op	     400 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Sereal_____Encode-8         	    3309	    366856 ns/op	  275450 B/op	    3388 allocs/op
+
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Msgpack____Decode-8         	    6516	    187718 ns/op	   70733 B/op	    1074 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Binc_______Decode-8         	    6438	    191950 ns/op	   70734 B/op	    1074 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Simple_____Decode-8         	    6399	    188849 ns/op	   70749 B/op	    1074 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Cbor_______Decode-8         	    5990	    201911 ns/op	   70734 B/op	    1074 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Json_______Decode-8         	    2388	    506201 ns/op	   96466 B/op	    1367 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Std_Json___Decode-8         	    1220	    983901 ns/op	  137157 B/op	    3114 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Gob________Decode-8         	    4426	    268142 ns/op	  159396 B/op	    2329 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__JsonIter___Decode-8         	    2401	    494179 ns/op	  132752 B/op	    2654 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Bson_______Decode-8         	    2710	    469429 ns/op	  191012 B/op	    4544 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Mgobson____Decode-8         	    2379	    484473 ns/op	  168729 B/op	    6776 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__VMsgpack___Decode-8         	    3836	    320774 ns/op	  100154 B/op	    2030 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Fxcbor_____Decode-8         	    5520	    220228 ns/op	   72503 B/op	    1395 allocs/op
+>>>> bench TAGS: 'alltests x codec.notfastpath' SUITE: BenchmarkCodecXSuite
+>>>> Skipping - these cannot (en|de)code TestStruc - encode (xml, gcbor, xdr), decode (xml, gcbor, xdr, sereal)
+
+BenchmarkCodecXSuite/options-false.../Benchmark__Msgpack____Encode-8         	   15902	     71917 ns/op	      24 B/op	       1 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Binc_______Encode-8         	   14414	     83038 ns/op	      24 B/op	       1 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Simple_____Encode-8         	   16126	     74933 ns/op	      24 B/op	       1 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Cbor_______Encode-8         	   15682	     76910 ns/op	      24 B/op	       1 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Json_______Encode-8         	    7014	    160522 ns/op	      24 B/op	       1 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Std_Json___Encode-8         	    6081	    198397 ns/op	   80881 B/op	     564 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Gob________Encode-8         	    7183	    160027 ns/op	  174173 B/op	     683 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__JsonIter___Encode-8         	    8683	    146208 ns/op	   54435 B/op	      80 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Bson_______Encode-8         	    3932	    283945 ns/op	  242261 B/op	    1181 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Mgobson____Encode-8         	    3397	    363348 ns/op	  300348 B/op	    1877 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__VMsgpack___Encode-8         	    6968	    171651 ns/op	  164607 B/op	     360 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Fxcbor_____Encode-8         	   12753	     94891 ns/op	   51996 B/op	     400 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Sereal_____Encode-8         	    3928	    307294 ns/op	  277373 B/op	    3387 allocs/op
+
+BenchmarkCodecXSuite/options-false.../Benchmark__Msgpack____Decode-8         	    7773	    155833 ns/op	   37415 B/op	     315 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Binc_______Decode-8         	    7712	    156230 ns/op	   37413 B/op	     315 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Simple_____Decode-8         	    7896	    156193 ns/op	   37415 B/op	     315 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Cbor_______Decode-8         	    7094	    169171 ns/op	   37410 B/op	     315 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Json_______Decode-8         	    2524	    480213 ns/op	   72310 B/op	     515 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Std_Json___Decode-8         	    1250	    960854 ns/op	  137148 B/op	    3114 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Gob________Decode-8         	    4587	    262158 ns/op	  159378 B/op	    2329 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__JsonIter___Decode-8         	    2449	    502989 ns/op	  132705 B/op	    2654 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Bson_______Decode-8         	    2577	    444043 ns/op	  190969 B/op	    4544 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Mgobson____Decode-8         	    2428	    488874 ns/op	  168691 B/op	    6776 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__VMsgpack___Decode-8         	    3860	    324180 ns/op	  100123 B/op	    2030 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Fxcbor_____Decode-8         	    5104	    223676 ns/op	   72485 B/op	    1395 allocs/op
+
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Msgpack____Encode-8         	   12897	     87472 ns/op	      72 B/op	       2 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Binc_______Encode-8         	   12867	     98434 ns/op	      72 B/op	       2 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Simple_____Encode-8         	   12374	     88106 ns/op	      72 B/op	       2 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Cbor_______Encode-8         	   13699	     91670 ns/op	      72 B/op	       2 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Json_______Encode-8         	    6532	    185661 ns/op	      72 B/op	       2 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Std_Json___Encode-8         	    6135	    191428 ns/op	   31742 B/op	     564 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Gob________Encode-8         	    8061	    149735 ns/op	  174174 B/op	     683 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__JsonIter___Encode-8         	    6572	    192643 ns/op	  215825 B/op	      98 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Bson_______Encode-8         	    4408	    271832 ns/op	  242278 B/op	    1181 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Mgobson____Encode-8         	    3310	    366192 ns/op	  300351 B/op	    1877 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__VMsgpack___Encode-8         	    8468	    146461 ns/op	   14064 B/op	     353 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Fxcbor_____Encode-8         	   10000	    112541 ns/op	  127713 B/op	     408 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Sereal_____Encode-8         	    3805	    317907 ns/op	  277588 B/op	    3387 allocs/op
+
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Msgpack____Decode-8         	    4948	    243043 ns/op	   86167 B/op	    2195 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Binc_______Decode-8         	    4620	    242851 ns/op	   84471 B/op	    1730 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Simple_____Decode-8         	    4926	    246629 ns/op	   85461 B/op	    1828 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Cbor_______Decode-8         	    4717	    254283 ns/op	   85367 B/op	    1821 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Json_______Decode-8         	    1884	    619875 ns/op	   92594 B/op	    1236 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Std_Json___Decode-8         	    1184	   1014997 ns/op	  266515 B/op	    3126 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Gob________Decode-8         	    4591	    282232 ns/op	  159405 B/op	    2329 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__JsonIter___Decode-8         	    2214	    533697 ns/op	  137096 B/op	    2800 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Bson_______Decode-8         	    2704	    452593 ns/op	  190998 B/op	    4544 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Mgobson____Decode-8         	    2452	    482496 ns/op	  168745 B/op	    6776 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__VMsgpack___Decode-8         	    3133	    327237 ns/op	  101247 B/op	    2034 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Fxcbor_____Decode-8         	    4123	    289312 ns/op	  201573 B/op	    1403 allocs/op
+
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Msgpack____Encode-8         	   14954	     75552 ns/op	      24 B/op	       1 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Binc_______Encode-8         	   15104	     75843 ns/op	      24 B/op	       1 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Simple_____Encode-8         	   15859	     71904 ns/op	      24 B/op	       1 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Cbor_______Encode-8         	   16314	     74171 ns/op	      24 B/op	       1 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Json_______Encode-8         	    7298	    173577 ns/op	      24 B/op	       1 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Std_Json___Encode-8         	    5583	    215286 ns/op	   80866 B/op	     564 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Gob________Encode-8         	    6433	    161348 ns/op	  174172 B/op	     683 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__JsonIter___Encode-8         	    8466	    145118 ns/op	   54437 B/op	      80 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Bson_______Encode-8         	    4356	    371764 ns/op	  242276 B/op	    1181 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Mgobson____Encode-8         	    2356	    464605 ns/op	  300360 B/op	    1877 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__VMsgpack___Encode-8         	    6626	    182158 ns/op	  164610 B/op	     360 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Fxcbor_____Encode-8         	   10000	    101426 ns/op	   52347 B/op	     400 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Sereal_____Encode-8         	    3446	    335017 ns/op	  277411 B/op	    3387 allocs/op
+
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Msgpack____Decode-8         	    7731	    156495 ns/op	   37413 B/op	     315 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Binc_______Decode-8         	    7203	    159514 ns/op	   37413 B/op	     315 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Simple_____Decode-8         	    7767	    155808 ns/op	   37412 B/op	     315 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Cbor_______Decode-8         	    6520	    177363 ns/op	   37412 B/op	     315 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Json_______Decode-8         	    2510	    487905 ns/op	   72311 B/op	     515 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Std_Json___Decode-8         	    1159	   1032202 ns/op	  137145 B/op	    3114 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Gob________Decode-8         	    3810	    327740 ns/op	  159409 B/op	    2329 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__JsonIter___Decode-8         	    2046	    606685 ns/op	  132701 B/op	    2654 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Bson_______Decode-8         	    1964	    557489 ns/op	  190983 B/op	    4544 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Mgobson____Decode-8         	    2110	    552000 ns/op	  168709 B/op	    6776 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__VMsgpack___Decode-8         	    3201	    352376 ns/op	  100157 B/op	    2030 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Fxcbor_____Decode-8         	    4980	    233171 ns/op	   72503 B/op	    1395 allocs/op
+>>>> bench TAGS: 'alltests x codec.notfastpath codec.safe' SUITE: BenchmarkCodecXSuite
+>>>> Skipping - these cannot (en|de)code TestStruc - encode (xml, gcbor, xdr), decode (xml, gcbor, xdr, sereal)
+
+BenchmarkCodecXSuite/options-false.../Benchmark__Msgpack____Encode-8         	   10000	    112384 ns/op	   10712 B/op	     400 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Binc_______Encode-8         	   10000	    114526 ns/op	   10712 B/op	     400 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Simple_____Encode-8         	   10000	    110362 ns/op	   10712 B/op	     400 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Cbor_______Encode-8         	   10000	    111670 ns/op	   11224 B/op	     408 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Json_______Encode-8         	    5950	    209009 ns/op	   10712 B/op	     400 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Std_Json___Encode-8         	    6112	    197357 ns/op	   80880 B/op	     564 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Gob________Encode-8         	    7695	    154567 ns/op	  174175 B/op	     683 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__JsonIter___Encode-8         	    7914	    158331 ns/op	   54411 B/op	      80 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Bson_______Encode-8         	    4282	    276838 ns/op	  242262 B/op	    1181 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Mgobson____Encode-8         	    3122	    365840 ns/op	  300347 B/op	    1877 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__VMsgpack___Encode-8         	    6884	    176748 ns/op	  164607 B/op	     360 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Fxcbor_____Encode-8         	   12688	    100244 ns/op	   51851 B/op	     400 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Sereal_____Encode-8         	    3877	    311675 ns/op	  276220 B/op	    3387 allocs/op
+
+BenchmarkCodecXSuite/options-false.../Benchmark__Msgpack____Decode-8         	    5482	    227745 ns/op	   69712 B/op	    1030 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Binc_______Decode-8         	    5490	    223580 ns/op	   69692 B/op	    1030 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Simple_____Decode-8         	    5515	    228598 ns/op	   69692 B/op	    1030 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Cbor_______Decode-8         	    5162	    234434 ns/op	   69696 B/op	    1030 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Json_______Decode-8         	    2076	    590755 ns/op	   99933 B/op	    1459 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Std_Json___Decode-8         	    1220	    987390 ns/op	  137145 B/op	    3114 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Gob________Decode-8         	    4366	    266144 ns/op	  159393 B/op	    2329 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__JsonIter___Decode-8         	    2428	    507380 ns/op	  132697 B/op	    2654 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Bson_______Decode-8         	    2710	    453166 ns/op	  190979 B/op	    4544 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Mgobson____Decode-8         	    2466	    486943 ns/op	  168717 B/op	    6776 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__VMsgpack___Decode-8         	    3530	    337925 ns/op	  100167 B/op	    2030 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Fxcbor_____Decode-8         	    5480	    221609 ns/op	   72500 B/op	    1395 allocs/op
+
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Msgpack____Encode-8         	    8886	    129004 ns/op	   10760 B/op	     401 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Binc_______Encode-8         	    9440	    130037 ns/op	   10760 B/op	     401 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Simple_____Encode-8         	    9438	    130295 ns/op	   10760 B/op	     401 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Cbor_______Encode-8         	    9699	    127585 ns/op	   11272 B/op	     409 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Json_______Encode-8         	    5319	    226376 ns/op	   10760 B/op	     401 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Std_Json___Encode-8         	    6289	    190054 ns/op	   31724 B/op	     564 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Gob________Encode-8         	    7748	    156893 ns/op	  174170 B/op	     683 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__JsonIter___Encode-8         	    6249	    197506 ns/op	  215825 B/op	      98 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Bson_______Encode-8         	    4274	    281989 ns/op	  242278 B/op	    1181 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Mgobson____Encode-8         	    3246	    370159 ns/op	  300355 B/op	    1877 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__VMsgpack___Encode-8         	    8511	    146316 ns/op	   14064 B/op	     353 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Fxcbor_____Encode-8         	    9716	    117751 ns/op	  127508 B/op	     408 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Sereal_____Encode-8         	    3678	    330002 ns/op	  276131 B/op	    3387 allocs/op
+
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Msgpack____Decode-8         	    4165	    283924 ns/op	   86336 B/op	    2227 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Binc_______Decode-8         	    4351	    284183 ns/op	   84718 B/op	    1763 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Simple_____Decode-8         	    3684	    291207 ns/op	   85455 B/op	    1851 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Cbor_______Decode-8         	    4203	    289573 ns/op	   85468 B/op	    1851 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Json_______Decode-8         	    1749	    688642 ns/op	  100298 B/op	    1549 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Std_Json___Decode-8         	    1165	   1080910 ns/op	  266553 B/op	    3126 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Gob________Decode-8         	    4150	    281651 ns/op	  159390 B/op	    2329 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__JsonIter___Decode-8         	    2290	    523302 ns/op	  136432 B/op	    2781 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Bson_______Decode-8         	    2276	    466365 ns/op	  190995 B/op	    4544 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Mgobson____Decode-8         	    2460	    491491 ns/op	  168709 B/op	    6776 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__VMsgpack___Decode-8         	    3640	    335232 ns/op	  101243 B/op	    2034 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Fxcbor_____Decode-8         	    4116	    295076 ns/op	  201577 B/op	    1403 allocs/op
+
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Msgpack____Encode-8         	   10000	    110397 ns/op	   10712 B/op	     400 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Binc_______Encode-8         	   10000	    115831 ns/op	   10712 B/op	     400 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Simple_____Encode-8         	   10000	    111333 ns/op	   10712 B/op	     400 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Cbor_______Encode-8         	   10000	    112877 ns/op	   11224 B/op	     408 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Json_______Encode-8         	    5869	    211640 ns/op	   10712 B/op	     400 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Std_Json___Encode-8         	    5932	    202617 ns/op	   80865 B/op	     564 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Gob________Encode-8         	    7538	    170648 ns/op	  174174 B/op	     683 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__JsonIter___Encode-8         	    7984	    145065 ns/op	   54439 B/op	      80 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Bson_______Encode-8         	    3807	    299595 ns/op	  242278 B/op	    1181 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Mgobson____Encode-8         	    3177	    390979 ns/op	  300356 B/op	    1877 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__VMsgpack___Encode-8         	    6315	    187399 ns/op	  164609 B/op	     360 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Fxcbor_____Encode-8         	   12096	    101436 ns/op	   52181 B/op	     400 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Sereal_____Encode-8         	    3529	    341819 ns/op	  276197 B/op	    3387 allocs/op
+
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Msgpack____Decode-8         	    5328	    226490 ns/op	   69676 B/op	    1030 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Binc_______Decode-8         	    5052	    227100 ns/op	   69693 B/op	    1030 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Simple_____Decode-8         	    5394	    221156 ns/op	   69692 B/op	    1030 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Cbor_______Decode-8         	    5143	    237738 ns/op	   69697 B/op	    1030 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Json_______Decode-8         	    2067	    580152 ns/op	   99892 B/op	    1459 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Std_Json___Decode-8         	    1182	    990010 ns/op	  137159 B/op	    3114 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Gob________Decode-8         	    4279	    271919 ns/op	  159407 B/op	    2329 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__JsonIter___Decode-8         	    2355	    499222 ns/op	  132713 B/op	    2654 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Bson_______Decode-8         	    2665	    456861 ns/op	  190982 B/op	    4544 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Mgobson____Decode-8         	    2366	    498201 ns/op	  168728 B/op	    6776 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__VMsgpack___Decode-8         	    3346	    335141 ns/op	  100121 B/op	    2030 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Fxcbor_____Decode-8         	    4899	    226156 ns/op	   72481 B/op	    1395 allocs/op
+>>>> bench TAGS: 'alltests x codecgen' SUITE: BenchmarkCodecXSuite
+>>>> Skipping - these cannot (en|de)code TestStruc - encode (xml, gcbor, xdr), decode (xml, gcbor, xdr, sereal)
+
+BenchmarkCodecXSuite/options-false.../Benchmark__Msgpack____Encode-8         	   34470	     34841 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Binc_______Encode-8         	   32324	     37186 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Simple_____Encode-8         	   33735	     34665 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Cbor_______Encode-8         	   33770	     34678 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Json_______Encode-8         	   10000	    122730 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Std_Json___Encode-8         	    6075	    199003 ns/op	   80843 B/op	     564 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Gob________Encode-8         	    7851	    145610 ns/op	  174172 B/op	     683 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__JsonIter___Encode-8         	    8594	    147488 ns/op	   54411 B/op	      80 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Bson_______Encode-8         	    4321	    281576 ns/op	  242263 B/op	    1181 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Mgobson____Encode-8         	    3368	    354735 ns/op	  300326 B/op	    1877 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__VMsgpack___Encode-8         	    7029	    173947 ns/op	  164606 B/op	     360 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Fxcbor_____Encode-8         	   12234	    106794 ns/op	   51881 B/op	     400 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Sereal_____Encode-8         	    3554	    338737 ns/op	  276007 B/op	    3387 allocs/op
+
+BenchmarkCodecXSuite/options-false.../Benchmark__Msgpack____Decode-8         	   14653	     83816 ns/op	   35909 B/op	     308 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Binc_______Decode-8         	   14523	     81783 ns/op	   35910 B/op	     308 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Simple_____Decode-8         	   14707	     89187 ns/op	   35907 B/op	     308 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Cbor_______Decode-8         	   13128	     90727 ns/op	   35910 B/op	     308 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Json_______Decode-8         	    3080	    393037 ns/op	   70143 B/op	     500 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Std_Json___Decode-8         	    1204	    978626 ns/op	  137153 B/op	    3114 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Gob________Decode-8         	    4507	    265291 ns/op	  159381 B/op	    2329 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__JsonIter___Decode-8         	    2436	    498871 ns/op	  132682 B/op	    2654 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Bson_______Decode-8         	    2702	    445531 ns/op	  190949 B/op	    4544 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Mgobson____Decode-8         	    2475	    486854 ns/op	  168701 B/op	    6776 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__VMsgpack___Decode-8         	    3757	    330986 ns/op	  100159 B/op	    2030 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Fxcbor_____Decode-8         	    5378	    225236 ns/op	   72487 B/op	    1395 allocs/op
+
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Msgpack____Encode-8         	   25462	     46773 ns/op	    1480 B/op	       3 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Binc_______Encode-8         	   24649	     49761 ns/op	    1480 B/op	       3 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Simple_____Encode-8         	   23946	     50624 ns/op	    1480 B/op	       3 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Cbor_______Encode-8         	   25458	     46734 ns/op	    1480 B/op	       3 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Json_______Encode-8         	    8667	    158900 ns/op	    1480 B/op	       3 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Std_Json___Encode-8         	    6097	    193543 ns/op	   31742 B/op	     564 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Gob________Encode-8         	    7645	    155586 ns/op	  174175 B/op	     683 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__JsonIter___Encode-8         	    6258	    194600 ns/op	  215826 B/op	      98 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Bson_______Encode-8         	    4238	    286126 ns/op	  242273 B/op	    1181 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Mgobson____Encode-8         	    3250	    375080 ns/op	  300344 B/op	    1877 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__VMsgpack___Encode-8         	    8322	    147921 ns/op	   14064 B/op	     353 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Fxcbor_____Encode-8         	   10000	    117354 ns/op	  127470 B/op	     408 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Sereal_____Encode-8         	    3645	    335983 ns/op	  276100 B/op	    3387 allocs/op
+
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Msgpack____Decode-8         	    7893	    157574 ns/op	   82215 B/op	    2111 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Binc_______Decode-8         	    7498	    152888 ns/op	   80599 B/op	    1647 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Simple_____Decode-8         	    7568	    155620 ns/op	   81334 B/op	    1735 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Cbor_______Decode-8         	    7297	    175268 ns/op	   81349 B/op	    1735 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Json_______Decode-8         	    2046	    523318 ns/op	   88818 B/op	    1160 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Std_Json___Decode-8         	    1160	   1055104 ns/op	  266539 B/op	    3126 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Gob________Decode-8         	    4389	    270037 ns/op	  159394 B/op	    2329 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__JsonIter___Decode-8         	    2239	    533830 ns/op	  136752 B/op	    2789 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Bson_______Decode-8         	    2708	    469873 ns/op	  191003 B/op	    4544 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Mgobson____Decode-8         	    2292	    498822 ns/op	  168710 B/op	    6776 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__VMsgpack___Decode-8         	    3723	    323966 ns/op	  101229 B/op	    2034 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Fxcbor_____Decode-8         	    4057	    294999 ns/op	  201607 B/op	    1403 allocs/op
+
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Msgpack____Encode-8         	   34459	     34561 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Binc_______Encode-8         	   32596	     37947 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Simple_____Encode-8         	   34572	     37452 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Cbor_______Encode-8         	   33889	     34932 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Json_______Encode-8         	   10000	    119757 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Std_Json___Encode-8         	    5767	    202290 ns/op	   80866 B/op	     564 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Gob________Encode-8         	    7897	    174048 ns/op	  174174 B/op	     683 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__JsonIter___Encode-8         	    6866	    184485 ns/op	   54443 B/op	      80 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Bson_______Encode-8         	    4279	    303392 ns/op	  242272 B/op	    1181 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Mgobson____Encode-8         	    2991	    395890 ns/op	  300349 B/op	    1877 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__VMsgpack___Encode-8         	    6542	    190347 ns/op	  164609 B/op	     360 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Fxcbor_____Encode-8         	   12080	    102274 ns/op	   52165 B/op	     400 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Sereal_____Encode-8         	    3355	    404706 ns/op	  276064 B/op	    3387 allocs/op
+
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Msgpack____Decode-8         	   13302	     87709 ns/op	   35911 B/op	     308 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Binc_______Decode-8         	   14378	     86611 ns/op	   35910 B/op	     308 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Simple_____Decode-8         	   13404	     85176 ns/op	   35909 B/op	     308 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Cbor_______Decode-8         	   12952	     94279 ns/op	   35909 B/op	     308 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Json_______Decode-8         	    2973	    392823 ns/op	   70142 B/op	     500 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Std_Json___Decode-8         	    1220	    983175 ns/op	  137170 B/op	    3114 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Gob________Decode-8         	    4459	    269082 ns/op	  159359 B/op	    2329 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__JsonIter___Decode-8         	    2418	    514030 ns/op	  132673 B/op	    2654 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Bson_______Decode-8         	    2746	    471130 ns/op	  190982 B/op	    4544 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Mgobson____Decode-8         	    2284	    498471 ns/op	  168728 B/op	    6776 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__VMsgpack___Decode-8         	    3727	    326768 ns/op	  100105 B/op	    2030 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Fxcbor_____Decode-8         	    5448	    217588 ns/op	   72485 B/op	    1395 allocs/op
+>>>> bench TAGS: 'alltests x codecgen codec.safe' SUITE: BenchmarkCodecXSuite
+>>>> Skipping - these cannot (en|de)code TestStruc - encode (xml, gcbor, xdr), decode (xml, gcbor, xdr, sereal)
+
+BenchmarkCodecXSuite/options-false.../Benchmark__Msgpack____Encode-8         	   33651	     34927 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Binc_______Encode-8         	   32080	     37783 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Simple_____Encode-8         	   33220	     35451 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Cbor_______Encode-8         	   34694	     35386 ns/op	    1944 B/op	      10 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Json_______Encode-8         	   10000	    122313 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Std_Json___Encode-8         	    6070	    203060 ns/op	   80861 B/op	     564 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Gob________Encode-8         	    7201	    176322 ns/op	  174176 B/op	     683 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__JsonIter___Encode-8         	    8132	    150921 ns/op	   54437 B/op	      80 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Bson_______Encode-8         	    4592	    300996 ns/op	  242262 B/op	    1181 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Mgobson____Encode-8         	    2377	    451306 ns/op	  300332 B/op	    1877 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__VMsgpack___Encode-8         	    6540	    185562 ns/op	  164605 B/op	     360 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Fxcbor_____Encode-8         	   12840	     98223 ns/op	   51895 B/op	     400 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Sereal_____Encode-8         	    3751	    314454 ns/op	  271122 B/op	    3388 allocs/op
+
+BenchmarkCodecXSuite/options-false.../Benchmark__Msgpack____Decode-8         	   12117	    101849 ns/op	   65558 B/op	     914 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Binc_______Decode-8         	   10000	    110245 ns/op	   65588 B/op	     914 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Simple_____Decode-8         	   12189	     98753 ns/op	   65591 B/op	     914 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Cbor_______Decode-8         	   10000	    113396 ns/op	   65573 B/op	     914 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Json_______Decode-8         	    2924	    411475 ns/op	   90327 B/op	    1198 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Std_Json___Decode-8         	    1221	    987983 ns/op	  137155 B/op	    3114 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Gob________Decode-8         	    4590	    263619 ns/op	  159374 B/op	    2329 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__JsonIter___Decode-8         	    2479	    494531 ns/op	  132707 B/op	    2654 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Bson_______Decode-8         	    2766	    473799 ns/op	  190998 B/op	    4544 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Mgobson____Decode-8         	    2419	    484455 ns/op	  168706 B/op	    6776 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__VMsgpack___Decode-8         	    3596	    338859 ns/op	  100187 B/op	    2030 allocs/op
+BenchmarkCodecXSuite/options-false.../Benchmark__Fxcbor_____Decode-8         	    5542	    222306 ns/op	   72502 B/op	    1395 allocs/op
+
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Msgpack____Encode-8         	   24974	     47737 ns/op	    1480 B/op	       3 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Binc_______Encode-8         	   24048	     50714 ns/op	    1480 B/op	       3 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Simple_____Encode-8         	   23280	     54472 ns/op	    1480 B/op	       3 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Cbor_______Encode-8         	   24696	     48147 ns/op	    1992 B/op	      11 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Json_______Encode-8         	    8886	    137839 ns/op	    1480 B/op	       3 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Std_Json___Encode-8         	    6330	    190499 ns/op	   31760 B/op	     564 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Gob________Encode-8         	    8196	    151895 ns/op	  174174 B/op	     683 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__JsonIter___Encode-8         	    6333	    191091 ns/op	  215825 B/op	      98 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Bson_______Encode-8         	    4228	    276348 ns/op	  242274 B/op	    1181 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Mgobson____Encode-8         	    3354	    365914 ns/op	  300346 B/op	    1877 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__VMsgpack___Encode-8         	    8076	    145640 ns/op	   14064 B/op	     353 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Fxcbor_____Encode-8         	   10000	    113979 ns/op	  127313 B/op	     408 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Sereal_____Encode-8         	    3802	    343556 ns/op	  271240 B/op	    3388 allocs/op
+
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Msgpack____Decode-8         	    7930	    161123 ns/op	   82199 B/op	    2111 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Binc_______Decode-8         	    8197	    159030 ns/op	   80549 B/op	    1647 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Simple_____Decode-8         	    6811	    178900 ns/op	   81333 B/op	    1735 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Cbor_______Decode-8         	    6080	    190375 ns/op	   81350 B/op	    1735 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Json_______Decode-8         	    2294	    527176 ns/op	   90708 B/op	    1288 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Std_Json___Decode-8         	    1155	   1046070 ns/op	  266534 B/op	    3126 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Gob________Decode-8         	    4521	    264389 ns/op	  159365 B/op	    2329 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__JsonIter___Decode-8         	    2332	    521297 ns/op	  136515 B/op	    2780 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Bson_______Decode-8         	    2748	    449021 ns/op	  190985 B/op	    4544 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Mgobson____Decode-8         	    2376	    494636 ns/op	  168710 B/op	    6776 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__VMsgpack___Decode-8         	    3742	    327257 ns/op	  101198 B/op	    2034 allocs/op
+BenchmarkCodecXSuite/use-bufio-!bytes/Benchmark__Fxcbor_____Decode-8         	    4220	    298125 ns/op	  201606 B/op	    1403 allocs/op
+
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Msgpack____Encode-8         	   35605	     34775 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Binc_______Encode-8         	   31118	     38612 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Simple_____Encode-8         	   32863	     36207 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Cbor_______Encode-8         	   34552	     34615 ns/op	    1944 B/op	      10 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Json_______Encode-8         	   10000	    121596 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Std_Json___Encode-8         	    5971	    201117 ns/op	   80865 B/op	     564 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Gob________Encode-8         	    7716	    155485 ns/op	  174172 B/op	     683 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__JsonIter___Encode-8         	    8210	    146873 ns/op	   54438 B/op	      80 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Bson_______Encode-8         	    4251	    283313 ns/op	  242271 B/op	    1181 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Mgobson____Encode-8         	    3243	    372854 ns/op	  300330 B/op	    1877 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__VMsgpack___Encode-8         	    6708	    181280 ns/op	  164609 B/op	     360 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Fxcbor_____Encode-8         	   10000	    101200 ns/op	   52098 B/op	     400 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Sereal_____Encode-8         	    3564	    336859 ns/op	  270982 B/op	    3387 allocs/op
+
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Msgpack____Decode-8         	   10000	    102620 ns/op	   65590 B/op	     914 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Binc_______Decode-8         	   10000	    100366 ns/op	   65589 B/op	     914 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Simple_____Decode-8         	   10000	    103782 ns/op	   65574 B/op	     914 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Cbor_______Decode-8         	   10000	    111465 ns/op	   65590 B/op	     914 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Json_______Decode-8         	    2926	    419408 ns/op	   90317 B/op	    1198 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Std_Json___Decode-8         	    1216	    995203 ns/op	  137155 B/op	    3114 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Gob________Decode-8         	    4431	    279996 ns/op	  159407 B/op	    2329 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__JsonIter___Decode-8         	    2431	    494442 ns/op	  132710 B/op	    2654 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Bson_______Decode-8         	    2718	    463632 ns/op	  190974 B/op	    4544 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Mgobson____Decode-8         	    2317	    496225 ns/op	  168731 B/op	    6776 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__VMsgpack___Decode-8         	    3693	    323015 ns/op	  100168 B/op	    2030 allocs/op
+BenchmarkCodecXSuite/reset-enc-dec.../Benchmark__Fxcbor_____Decode-8         	    5562	    225452 ns/op	   72475 B/op	    1395 allocs/op
+**** SUITE (WITH CODECGEN) ****
+
+>>>> bench TAGS: 'alltests x generated' SUITE: BenchmarkCodecXGenSuite
+
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Msgpack____Encode-8         	   32904	     35022 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Binc_______Encode-8         	   30379	     38871 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Simple_____Encode-8         	   35864	     34445 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Cbor_______Encode-8         	   34430	     35696 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Json_______Encode-8         	   10000	    123206 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Msgp_______Encode-8         	   39766	     30181 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Easyjson___Encode-8         	   10000	    104865 ns/op	   50610 B/op	      12 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Ffjson_____Encode-8         	    4768	    273610 ns/op	  129463 B/op	    1125 allocs/op
+
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Msgpack____Decode-8         	   15882	     78680 ns/op	   35909 B/op	     308 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Binc_______Decode-8         	   15487	     81219 ns/op	   35909 B/op	     308 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Simple_____Decode-8         	   16021	     75260 ns/op	   35909 B/op	     308 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Cbor_______Decode-8         	   14478	     84735 ns/op	   35908 B/op	     308 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Json_______Decode-8         	    2893	    383888 ns/op	   70156 B/op	     500 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Msgp_______Decode-8         	   17559	     64932 ns/op	   68805 B/op	     969 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Easyjson___Decode-8         	    3069	    391640 ns/op	   70535 B/op	     475 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Ffjson_____Decode-8         	    3110	    375249 ns/op	   95051 B/op	    1290 allocs/op
+
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Msgpack____Encode-8         	   25148	     47378 ns/op	    1480 B/op	       3 allocs/op
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Binc_______Encode-8         	   22904	     50625 ns/op	    1480 B/op	       3 allocs/op
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Simple_____Encode-8         	   23452	     49750 ns/op	    1480 B/op	       3 allocs/op
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Cbor_______Encode-8         	   25075	     48442 ns/op	    1480 B/op	       3 allocs/op
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Json_______Encode-8         	    9002	    135431 ns/op	    1480 B/op	       3 allocs/op
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Msgp_______Encode-8         	   48124	     25293 ns/op	    2144 B/op	       3 allocs/op
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Easyjson___Encode-8         	   10000	    101246 ns/op	    1321 B/op	      14 allocs/op
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Ffjson_____Encode-8         	    4766	    288626 ns/op	  129717 B/op	    1125 allocs/op
+
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Msgpack____Decode-8         	    8000	    154948 ns/op	   82216 B/op	    2111 allocs/op
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Binc_______Decode-8         	    8476	    152341 ns/op	   80596 B/op	    1647 allocs/op
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Simple_____Decode-8         	    7605	    161818 ns/op	   81363 B/op	    1735 allocs/op
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Cbor_______Decode-8         	    7297	    152966 ns/op	   81365 B/op	    1735 allocs/op
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Json_______Decode-8         	    2352	    513892 ns/op	   88811 B/op	    1160 allocs/op
+--- FAIL: BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Msgp_______Decode
+    bench_test.go:254: Error decoding into new TestStruc: msgp: unexpected EOF at AMSU64 at AnonInTestStruc at TestStrucCommon at Its/0
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Easyjson___Decode-8         	    2589	    518032 ns/op	  281019 B/op	     492 allocs/op
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Ffjson_____Decode-8         	    2568	    390221 ns/op	   95046 B/op	    1290 allocs/op
+--- FAIL: BenchmarkCodecXGenSuite/use-bufio-!bytes
+
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Msgpack____Encode-8         	   32942	     33546 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Binc_______Encode-8         	   31155	     38156 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Simple_____Encode-8         	   35277	     34179 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Cbor_______Encode-8         	   35042	     34900 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Json_______Encode-8         	   10000	    124411 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Msgp_______Encode-8         	   39684	     30064 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Easyjson___Encode-8         	   10000	    105455 ns/op	   50776 B/op	      12 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Ffjson_____Encode-8         	    4347	    259584 ns/op	  129768 B/op	    1125 allocs/op
+
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Msgpack____Decode-8         	   15912	     78364 ns/op	   35909 B/op	     308 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Binc_______Decode-8         	   10000	    102224 ns/op	   35909 B/op	     308 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Simple_____Decode-8         	   15421	     75831 ns/op	   35909 B/op	     308 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Cbor_______Decode-8         	   13825	     86646 ns/op	   35907 B/op	     308 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Json_______Decode-8         	    2900	    385035 ns/op	   70130 B/op	     500 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Msgp_______Decode-8         	   18646	     66587 ns/op	   68805 B/op	     969 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Easyjson___Decode-8         	    2842	    394403 ns/op	   70534 B/op	     475 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Ffjson_____Decode-8         	    3244	    370601 ns/op	   95062 B/op	    1290 allocs/op
+--- FAIL: BenchmarkCodecXGenSuite
+FAIL
+exit status 1
+FAIL	ugorji.net/codec/bench	69.241s
+>>>> bench TAGS: 'alltests x generated codec.safe' SUITE: BenchmarkCodecXGenSuite
+
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Msgpack____Encode-8         	   35155	     35136 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Binc_______Encode-8         	   32358	     37386 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Simple_____Encode-8         	   34543	     35061 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Cbor_______Encode-8         	   34935	     35307 ns/op	    1944 B/op	      10 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Json_______Encode-8         	    9884	    122627 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Msgp_______Encode-8         	   41545	     28909 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Easyjson___Encode-8         	   10000	    110496 ns/op	   50612 B/op	      12 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Ffjson_____Encode-8         	    4741	    271610 ns/op	  129694 B/op	    1125 allocs/op
+
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Msgpack____Decode-8         	   12417	    100772 ns/op	   65606 B/op	     914 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Binc_______Decode-8         	   12747	     94201 ns/op	   65588 B/op	     914 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Simple_____Decode-8         	   10000	    105405 ns/op	   65557 B/op	     914 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Cbor_______Decode-8         	    8827	    122328 ns/op	   65603 B/op	     914 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Json_______Decode-8         	    2980	    409404 ns/op	   90328 B/op	    1198 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Msgp_______Decode-8         	   18891	     71498 ns/op	   68806 B/op	     969 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Easyjson___Decode-8         	    2611	    390402 ns/op	   70545 B/op	     475 allocs/op
+BenchmarkCodecXGenSuite/options-false.../Benchmark__Ffjson_____Decode-8         	    3274	    388851 ns/op	   95047 B/op	    1290 allocs/op
+
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Msgpack____Encode-8         	   25442	     47110 ns/op	    1480 B/op	       3 allocs/op
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Binc_______Encode-8         	   24127	     49278 ns/op	    1480 B/op	       3 allocs/op
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Simple_____Encode-8         	   23653	     50299 ns/op	    1480 B/op	       3 allocs/op
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Cbor_______Encode-8         	   25498	     47570 ns/op	    1992 B/op	      11 allocs/op
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Json_______Encode-8         	    8883	    141502 ns/op	    1480 B/op	       3 allocs/op
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Msgp_______Encode-8         	   46135	     26021 ns/op	    2144 B/op	       3 allocs/op
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Easyjson___Encode-8         	   10000	    100827 ns/op	    1338 B/op	      14 allocs/op
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Ffjson_____Encode-8         	    4756	    263047 ns/op	  129732 B/op	    1125 allocs/op
+
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Msgpack____Decode-8         	    8355	    147037 ns/op	   82181 B/op	    2111 allocs/op
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Binc_______Decode-8         	    8589	    149397 ns/op	   80567 B/op	    1647 allocs/op
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Simple_____Decode-8         	    7938	    151440 ns/op	   81320 B/op	    1735 allocs/op
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Cbor_______Decode-8         	    8049	    171222 ns/op	   81334 B/op	    1735 allocs/op
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Json_______Decode-8         	    2334	    528755 ns/op	   90714 B/op	    1288 allocs/op
+--- FAIL: BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Msgp_______Decode
+    bench_test.go:254: Error decoding into new TestStruc: msgp: unexpected EOF at AMSS/2222222222222222 at AnonInTestStruc at TestStrucCommon at Its/0
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Easyjson___Decode-8         	    2728	    457409 ns/op	  281013 B/op	     492 allocs/op
+BenchmarkCodecXGenSuite/use-bufio-!bytes/Benchmark__Ffjson_____Decode-8         	    3145	    367139 ns/op	   95060 B/op	    1290 allocs/op
+--- FAIL: BenchmarkCodecXGenSuite/use-bufio-!bytes
+
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Msgpack____Encode-8         	   35450	     34816 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Binc_______Encode-8         	   31750	     37196 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Simple_____Encode-8         	   34928	     35350 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Cbor_______Encode-8         	   34491	     34822 ns/op	    1944 B/op	      10 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Json_______Encode-8         	   10000	    122196 ns/op	    1432 B/op	       2 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Msgp_______Encode-8         	   41464	     30373 ns/op	       0 B/op	       0 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Easyjson___Encode-8         	   10000	    111848 ns/op	   50749 B/op	      12 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Ffjson_____Encode-8         	    4789	    260026 ns/op	  129929 B/op	    1125 allocs/op
+
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Msgpack____Decode-8         	   12082	    103025 ns/op	   65573 B/op	     914 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Binc_______Decode-8         	   10000	    108228 ns/op	   65607 B/op	     914 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Simple_____Decode-8         	   12592	     93504 ns/op	   65591 B/op	     914 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Cbor_______Decode-8         	   10000	    115682 ns/op	   65590 B/op	     914 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Json_______Decode-8         	    2961	    408996 ns/op	   90332 B/op	    1198 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Msgp_______Decode-8         	   18722	     64085 ns/op	   68820 B/op	     969 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Easyjson___Decode-8         	    3100	    389236 ns/op	   70531 B/op	     475 allocs/op
+BenchmarkCodecXGenSuite/reset-enc-dec.../Benchmark__Ffjson_____Decode-8         	    3283	    371581 ns/op	   95050 B/op	    1290 allocs/op
+--- FAIL: BenchmarkCodecXGenSuite
+FAIL
+exit status 1
+FAIL	ugorji.net/codec/bench	68.118s
