@@ -10,8 +10,6 @@ import (
 	"os"
 	"path"
 	"public"
-	_ "strconv"
-	_ "strings"
 	"sync"
 	"time"
 
@@ -81,6 +79,8 @@ var (
 	logFileName = "download_encryption.log"
 )
 
+/****gin需要处理的固定信息****/
+
 //解决跨域问题
 func Cors() gin.HandlerFunc {
 	return func(c *gin.Context) {
@@ -103,12 +103,13 @@ func Cors() gin.HandlerFunc {
 func logerMiddleware() gin.HandlerFunc {
 	// 日志文件
 	fileName := path.Join(logFilePath, logFileName)
+
 	// 写入文件
-	//src, err := os.OpenFile(fileName, os.O_APPEND|os.O_WRONLY, os.ModeAppend)
 	src, err := os.OpenFile(fileName, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
 	if err != nil {
 		fmt.Println("err", err)
 	}
+
 	// 实例化
 	logger := logrus.New()
 	//设置日志级别
@@ -173,6 +174,7 @@ func logerMiddleware() gin.HandlerFunc {
 	}
 }
 
+//获取到客户端ip地址；
 func (wm *WebManager) GetClientIP(c *gin.Context) string {
 	reqIP := c.ClientIP()
 	if reqIP == "::1" {
@@ -181,12 +183,14 @@ func (wm *WebManager) GetClientIP(c *gin.Context) string {
 	return reqIP
 }
 
+//根据ip地址查找用户是否属于管理员；
 func (wm *WebManager) findAdmin(Ip string) bool {
 
 	exist := wm.Admins[Ip]
 	return exist
 }
 
+//IP检测；
 func (wm *WebManager) checkIp(c *gin.Context) bool {
 
 	clientIp := wm.GetClientIP(c)
@@ -198,6 +202,7 @@ func (wm *WebManager) checkIp(c *gin.Context) bool {
 	return false
 }
 
+//获取m3u8文件；
 func (wm *WebManager) GetIndexStream(c *gin.Context) {
 
 	//获取到客户端IP地址
@@ -242,6 +247,7 @@ func (wm *WebManager) GetIndexStream(c *gin.Context) {
 	c.File(srcFile)
 }
 
+//获取ts文件；
 func (wm *WebManager) GetTsStream(c *gin.Context) {
 
 	//获取到客户端IP地址
@@ -288,6 +294,7 @@ func (wm *WebManager) GetTsStream(c *gin.Context) {
 }
 
 //*********************************
+
 //此处约定，凡是key不为空的，都需要进行流加密
 func (wm *WebManager) AddStream(c *gin.Context) {
 
@@ -312,15 +319,27 @@ func (wm *WebManager) AddStream(c *gin.Context) {
 	}
 
 	//添加流
-	wm.streamDownload.StreamAdd(request.ChannelName,
+	var stream *download.StreamDownload
+	var errAdd error
+	if errAdd, stream = wm.streamDownload.StreamAdd(request.ChannelName,
 		request.SourceUrl,
 		request.PushUrl,
 		request.SrcPath,
 		request.Key,
 		request.IV,
-		request.EncryptionPath)
+		request.EncryptionPath); errAdd != nil {
 
-	//
+		c.JSON(StatusIp, gin.H{
+			"result":  StatusIp,
+			"message": "Add Stream Failed",
+		})
+		return
+	}
+
+	//新增流完毕，需要启动;
+	go stream.Download()
+
+	//返回成功;
 	c.JSON(http.StatusOK, gin.H{
 		"result":  http.StatusOK,
 		"message": "OK",
@@ -340,23 +359,22 @@ func (wm *WebManager) DeleteStream(c *gin.Context) {
 	}
 
 	//分解数据
-	var request AddStreamRequest
-	if err := c.BindJSON(&request); err != nil {
+	uri := c.Query("url")
+	wm.streamDownload.StreamMutex.Lock()
+	defer wm.streamDownload.StreamMutex.Unlock()
 
-		c.JSON(StatusIp, gin.H{
-			"result":  StatusIp,
-			"message": "Unmarshal Add Stream Boby Json Failed",
-		})
-		return
+	//轮询排查
+	for _, v := range wm.streamDownload.StreamMap {
+		if v.StreamUrl == uri {
+			v.HlsStream.StopAndWait()
+			delete(wm.streamDownload.StreamMap, v.ChannelName)
+		}
 	}
 
-	//添加流
-	wm.streamDownload.StreamAdd(request.ChannelName, request.SourceUrl, request.PushUrl, request.SrcPath, request.Key, request.IV, request.EncryptionPath)
-
-	//
+	//更新下载
 	c.JSON(http.StatusOK, gin.H{
 		"result":  http.StatusOK,
-		"message": "OK",
+		"message": uri,
 	})
 }
 
@@ -370,6 +388,16 @@ func (wm *WebManager) ClearStream(c *gin.Context) {
 			"result":  StatusIp,
 			"message": "Client Ip not Admin",
 		})
+	}
+
+	wm.streamDownload.StreamMutex.Lock()
+	defer wm.streamDownload.StreamMutex.Unlock()
+
+	//轮询排查
+	for _, v := range wm.streamDownload.StreamMap {
+
+		v.HlsStream.StopAndWait()
+		delete(wm.streamDownload.StreamMap, v.ChannelName)
 	}
 }
 

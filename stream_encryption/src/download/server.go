@@ -4,6 +4,7 @@ import (
 	"common/hls"
 	"config"
 	"encoding/json"
+	"errors"
 	"io/ioutil"
 	"os"
 	"path"
@@ -13,6 +14,7 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+	"sync"
 	"syscall"
 	"time"
 
@@ -41,18 +43,18 @@ type FileCreateTimer struct {
 type FileCreateTimers []FileCreateTimer
 
 type StreamDownload struct {
-	ChannelName     string
-	StreamUrl       string
-	PushUrl         string
-	SrcPath         string
-	Key             string
-	IV              string
-	EncryptionPath  string
-	AntileechRemote string
-	M3u8FailCount   int
-	IndexM3u8Pushed bool
-	MaxFileCount    int
-	DeleteFileCount int
+	ChannelName     string //流名称
+	StreamUrl       string //流地址
+	PushUrl         string //推送流地址
+	SrcPath         string //源文件保存目录
+	Key             string //加密key
+	IV              string //向量
+	EncryptionPath  string //加密文件保存目录
+	AntileechRemote string //
+	M3u8FailCount   int    //失败次数
+	IndexM3u8Pushed bool   //是否推送index
+	MaxFileCount    int    //最大保存文件数量
+	DeleteFileCount int    //删除文件数量
 	HlsStream       *hls.Stream
 	M3u8            *hls.M3u8
 	LastM3u8Time    time.Time
@@ -128,15 +130,17 @@ func (s *StreamDownload) Download() {
 	s.HlsStream = hlsStream
 	hlsStream.Pull()
 
+	//检测当前流的下载状态
 	for {
+
+		//判断
 		if s.M3u8 != nil && ((!s.HlsStream.IsTop) || (s.HlsStream.IsTop && !s.IndexM3u8Pushed)) {
 			if s.HlsStream.IsTop {
 				s.IndexM3u8Pushed = true
 			}
-			// go udp.SendM3u8(s.Key, s.LocalPath, s.M3u8)
 		}
 
-		//check second m3u8 update
+		//判断m3u8是否在一分钟内没有更新
 		if s.HlsStream != nil && !s.HlsStream.IsTop {
 			if time.Now().Sub(s.LastM3u8Time) > time.Minute {
 				log4plus.Warn("[%s]Download m3u8 not changed over 1 minute!", s.ChannelName)
@@ -276,13 +280,14 @@ type StreamsDownload struct {
 	Streams         *StreamsConfig
 	MaxFileCount    int
 	DeleteFileCount int
-	streamMap       map[string]*StreamDownload
+	StreamMutex     sync.Mutex
+	StreamMap       map[string]*StreamDownload
 }
 
-func (server *StreamsDownload) StreamAdd(channelName, streamUrl, pushUrl, srcPath, key, iv, encryptionPath string) *StreamDownload {
+func (server *StreamsDownload) StreamAdd(channelName, streamUrl, pushUrl, srcPath, key, iv, encryptionPath string) (error, *StreamDownload) {
 
 	if channelName == "" || streamUrl == "" || (pushUrl == "" && srcPath == "") {
-		return nil
+		return errors.New("Param Is NULL"), nil
 	}
 
 	if srcPath != "" {
@@ -292,6 +297,9 @@ func (server *StreamsDownload) StreamAdd(channelName, streamUrl, pushUrl, srcPat
 	if key != "" && encryptionPath != "" {
 		os.MkdirAll(encryptionPath, os.ModePerm)
 	}
+
+	server.StreamMutex.Lock()
+	defer server.StreamMutex.Unlock()
 
 	stream := &StreamDownload{
 		ChannelName:     channelName,
@@ -306,8 +314,8 @@ func (server *StreamsDownload) StreamAdd(channelName, streamUrl, pushUrl, srcPat
 		MaxFileCount:    server.MaxFileCount,
 		DeleteFileCount: server.DeleteFileCount,
 	}
-	server.streamMap[channelName] = stream
-	return stream
+	server.StreamMap[channelName] = stream
+	return nil, stream
 }
 
 func (server *StreamsDownload) loadConfig() {
@@ -346,7 +354,7 @@ func New() *StreamsDownload {
 	server := &StreamsDownload{
 		MaxFileCount:    config.GetInstance().Config.Stream.MaxFileCount,
 		DeleteFileCount: config.GetInstance().Config.Stream.DeleteCount,
-		streamMap:       make(map[string]*StreamDownload),
+		StreamMap:       make(map[string]*StreamDownload),
 	}
 	server.loadConfig()
 	return server
@@ -355,13 +363,14 @@ func New() *StreamsDownload {
 func (server *StreamsDownload) Run() {
 
 	//流下载
-	log4plus.Info("StreamsDownload Current Stream Count=%d...", len(server.streamMap))
-	for _, stream := range server.streamMap {
+	log4plus.Info("StreamsDownload Current Stream Count=%d...", len(server.StreamMap))
+	for _, stream := range server.StreamMap {
+
 		go stream.Download()
 	}
 
 	//文件删除
-	for _, stream := range server.streamMap {
+	for _, stream := range server.StreamMap {
 		go stream.Delete()
 	}
 }
