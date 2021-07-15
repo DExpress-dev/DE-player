@@ -214,7 +214,7 @@ func (wm *WebManager) GetIndexStream(c *gin.Context) {
 	dirName := c.Param("dirName")
 
 	//判断流是否存在
-	srcPath, encryptionPath, err := wm.findStream(channelName)
+	_, encryptionPath, err := wm.findStream(channelName)
 	if err != nil {
 		c.JSON(http.StatusNotFound, gin.H{
 			"result":  http.StatusNotFound,
@@ -224,12 +224,13 @@ func (wm *WebManager) GetIndexStream(c *gin.Context) {
 	}
 
 	//检测IP地址
-	var srcFile string
-	if wm.checkIp(c) {
-		srcFile = srcPath + "/" + dirName
-	} else {
-		srcFile = encryptionPath + "/" + dirName
-	}
+	//	var srcFile string
+	//	if wm.checkIp(c) {
+	//		srcFile = srcPath + "/" + dirName
+	//	} else {
+	//		srcFile = encryptionPath + "/" + dirName
+	//	}
+	srcFile := encryptionPath + "/" + dirName
 
 	if !public.FileExist(srcFile) {
 
@@ -260,7 +261,7 @@ func (wm *WebManager) GetTsStream(c *gin.Context) {
 	fileName := c.Param("fileName")
 
 	//判断流是否存在
-	srcPath, encryptionPath, err := wm.findStream(channelName)
+	_, encryptionPath, err := wm.findStream(channelName)
 	if err != nil {
 		c.JSON(http.StatusNotFound, gin.H{
 			"result":  http.StatusNotFound,
@@ -270,12 +271,13 @@ func (wm *WebManager) GetTsStream(c *gin.Context) {
 	}
 
 	//检测IP地址
-	var srcFile string
-	if wm.checkIp(c) {
-		srcFile = srcPath + "/" + dirName + "/" + fileName
-	} else {
-		srcFile = encryptionPath + "/" + dirName + "/" + fileName
-	}
+	//	var srcFile string
+	//	if wm.checkIp(c) {
+	//		srcFile = srcPath + "/" + dirName + "/" + fileName
+	//	} else {
+	//		srcFile = encryptionPath + "/" + dirName + "/" + fileName
+	//	}
+	srcFile := encryptionPath + "/" + dirName + "/" + fileName
 
 	if !public.FileExist(srcFile) {
 
@@ -368,6 +370,7 @@ func (wm *WebManager) DeleteStream(c *gin.Context) {
 		if v.StreamUrl == uri {
 			v.HlsStream.StopAndWait()
 			delete(wm.streamDownload.StreamMap, v.ChannelName)
+			log4plus.Info("---->>>>deleteStream success uri=%s", uri)
 		}
 	}
 
@@ -492,11 +495,11 @@ func (wm *WebManager) startChannel() {
 func (wm *WebManager) startAdmin() {
 
 	//分组处理
-	adminGroup := wm.ChannelGin.Group("/admin")
+	adminGroup := wm.AdminGin.Group("/admin")
 	{
 		adminGroup.POST("/addStream", wm.AddStream)
-		adminGroup.POST("/deleteStream", wm.DeleteStream)
-		adminGroup.POST("/clearStream", wm.ClearStream)
+		adminGroup.GET("/deleteStream", wm.DeleteStream)
+		adminGroup.GET("/clearStream", wm.ClearStream)
 	}
 	wm.AdminGin.Run(wm.AdminListen)
 }

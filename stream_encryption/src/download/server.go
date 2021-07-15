@@ -141,11 +141,11 @@ func (s *StreamDownload) Download() {
 		}
 
 		//判断m3u8是否在一分钟内没有更新
-		if s.HlsStream != nil && !s.HlsStream.IsTop {
-			if time.Now().Sub(s.LastM3u8Time) > time.Minute {
-				log4plus.Warn("[%s]Download m3u8 not changed over 1 minute!", s.ChannelName)
-			}
-		}
+		//		if s.HlsStream != nil && !s.HlsStream.IsTop {
+		//			if time.Now().Sub(s.LastM3u8Time) > time.Minute {
+		//				log4plus.Warn("[%s]Download m3u8 not changed over 1 minute!", s.ChannelName)
+		//			}
+		//		}
 
 		time.Sleep(30 * time.Second)
 	}
@@ -157,7 +157,7 @@ func (s *StreamDownload) getFileCreateTime(path string) int64 {
 	if fileInfo, err := os.Stat(path); err == nil {
 		if osType == "linux" {
 			stat_t := fileInfo.Sys().(*syscall.Stat_t)
-			tCreate := int64(stat_t.Ctimespec.Sec) //linux 用 Ctim；
+			tCreate := int64(stat_t.Ctim.Sec) //linux 用 Ctim； Mac Ctimespec
 			/*windows 用
 			wFileSys := fileInfo.Sys().(*syscall.Win32FileAttributeData)
 			tNanSeconds := wFileSys.CreationTime.Nanoseconds() /// 返回的是纳秒

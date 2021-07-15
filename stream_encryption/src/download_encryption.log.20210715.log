@@ -1,0 +1,81 @@
+{"client_ip":"192.168.95.1","latency_time":7009,"level":"info","msg":"","req_method":"GET","req_uri":"/admin/deleteStream?url=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8","status_code":404,"time":"2021-07-15 22:47:48.464"}
+{"client_ip":"192.168.95.1","latency_time":21929069929,"level":"info","msg":"","req_method":"GET","req_uri":"/admin/deleteStream?url=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8","status_code":200,"time":"2021-07-15 22:49:45.521"}
+time="2021-07-15T22:49:45+08:00" level=info client_ip=192.168.95.1 latency_time=21.929069929s req_method=GET req_uri="/admin/deleteStream?url=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8" status_code=200
+{"client_ip":"192.168.95.1","latency_time":49819600117,"level":"info","msg":"","req_method":"GET","req_uri":"/admin/deleteStream?url=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8","status_code":200,"time":"2021-07-15 22:51:27.303"}
+time="2021-07-15T22:51:27+08:00" level=info client_ip=192.168.95.1 latency_time=49.819600117s req_method=GET req_uri="/admin/deleteStream?url=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8" status_code=200
+{"client_ip":"192.168.95.1","latency_time":9748867345,"level":"info","msg":"","req_method":"GET","req_uri":"/admin/deleteStream?url=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8","status_code":200,"time":"2021-07-15 22:53:01.489"}
+time="2021-07-15T22:53:01+08:00" level=info client_ip=192.168.95.1 latency_time=9.748867345s req_method=GET req_uri="/admin/deleteStream?url=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8" status_code=200
+{"client_ip":"192.168.95.1","latency_time":992032739,"level":"info","msg":"","req_method":"GET","req_uri":"/admin/deleteStream?url=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8","status_code":200,"time":"2021-07-15 22:59:11.846"}
+time="2021-07-15T22:59:11+08:00" level=info client_ip=192.168.95.1 latency_time=992.032739ms req_method=GET req_uri="/admin/deleteStream?url=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8" status_code=200
+{"client_ip":"192.168.95.1","latency_time":337563819,"level":"info","msg":"","req_method":"GET","req_uri":"/admin/deleteStream?url=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8","status_code":200,"time":"2021-07-15 23:00:59.955"}
+time="2021-07-15T23:00:59+08:00" level=info client_ip=192.168.95.1 latency_time=337.563819ms req_method=GET req_uri="/admin/deleteStream?url=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8" status_code=200
+{"client_ip":"192.168.95.1","latency_time":813472,"level":"info","msg":"","req_method":"POST","req_uri":"/admin/addStream","status_code":200,"time":"2021-07-15 23:01:12.357"}
+time="2021-07-15T23:01:12+08:00" level=info client_ip=192.168.95.1 latency_time="813.472µs" req_method=POST req_uri=/admin/addStream status_code=200
+{"client_ip":"192.168.95.1","latency_time":982045479,"level":"info","msg":"","req_method":"GET","req_uri":"/admin/deleteStream?url=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8","status_code":200,"time":"2021-07-15 23:01:33.450"}
+time="2021-07-15T23:01:33+08:00" level=info client_ip=192.168.95.1 latency_time=982.045479ms req_method=GET req_uri="/admin/deleteStream?url=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8" status_code=200
+{"client_ip":"192.168.95.1","latency_time":854397,"level":"info","msg":"","req_method":"POST","req_uri":"/admin/addStream","status_code":200,"time":"2021-07-15 23:03:58.818"}
+time="2021-07-15T23:03:58+08:00" level=info client_ip=192.168.95.1 latency_time="854.397µs" req_method=POST req_uri=/admin/addStream status_code=200
+{"client_ip":"192.168.95.1","latency_time":184759,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/index.m3u8","status_code":206,"time":"2021-07-15 23:11:40.208"}
+time="2021-07-15T23:11:40+08:00" level=info client_ip=192.168.95.1 latency_time="184.759µs" req_method=GET req_uri=/channellist/channel1/index.m3u8 status_code=206
+{"client_ip":"192.168.95.1","latency_time":76703695,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/cctv1_2md/1626361875_7462036.ts","status_code":200,"time":"2021-07-15 23:11:40.386"}
+time="2021-07-15T23:11:40+08:00" level=info client_ip=192.168.95.1 latency_time=76.703695ms req_method=GET req_uri=/channellist/channel1/cctv1_2md/1626361875_7462036.ts status_code=200
+{"client_ip":"192.168.95.1","latency_time":50035043,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/cctv1_2md/1626361885_7462037.ts","status_code":200,"time":"2021-07-15 23:11:42.163"}
+time="2021-07-15T23:11:42+08:00" level=info client_ip=192.168.95.1 latency_time=50.035043ms req_method=GET req_uri=/channellist/channel1/cctv1_2md/1626361885_7462037.ts status_code=200
+{"client_ip":"192.168.95.1","latency_time":113386197,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/cctv1_2md/1626361896_7462038.ts","status_code":200,"time":"2021-07-15 23:11:45.951"}
+time="2021-07-15T23:11:45+08:00" level=info client_ip=192.168.95.1 latency_time=113.386197ms req_method=GET req_uri=/channellist/channel1/cctv1_2md/1626361896_7462038.ts status_code=200
+{"client_ip":"192.168.95.1","latency_time":643178063,"level":"info","msg":"","req_method":"GET","req_uri":"/admin/deleteStream?url=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8","status_code":200,"time":"2021-07-15 23:11:53.401"}
+time="2021-07-15T23:11:53+08:00" level=info client_ip=192.168.95.1 latency_time=643.178063ms req_method=GET req_uri="/admin/deleteStream?url=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8" status_code=200
+{"client_ip":"192.168.95.1","latency_time":255181,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/index.m3u8","status_code":206,"time":"2021-07-15 23:12:09.985"}
+time="2021-07-15T23:12:09+08:00" level=info client_ip=192.168.95.1 latency_time="255.181µs" req_method=GET req_uri=/channellist/channel1/index.m3u8 status_code=206
+{"client_ip":"192.168.95.1","latency_time":48610955,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/cctv1_2md/1626361907_7462039.ts","status_code":200,"time":"2021-07-15 23:12:11.237"}
+time="2021-07-15T23:12:11+08:00" level=info client_ip=192.168.95.1 latency_time=48.610955ms req_method=GET req_uri=/channellist/channel1/cctv1_2md/1626361907_7462039.ts status_code=200
+{"client_ip":"192.168.95.1","latency_time":180318,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/index.m3u8","status_code":206,"time":"2021-07-15 23:12:20.910"}
+time="2021-07-15T23:12:20+08:00" level=info client_ip=192.168.95.1 latency_time="180.318µs" req_method=GET req_uri=/channellist/channel1/index.m3u8 status_code=206
+{"client_ip":"192.168.95.1","latency_time":168488,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/index.m3u8","status_code":206,"time":"2021-07-15 23:12:32.111"}
+time="2021-07-15T23:12:32+08:00" level=info client_ip=192.168.95.1 latency_time="168.488µs" req_method=GET req_uri=/channellist/channel1/index.m3u8 status_code=206
+{"client_ip":"192.168.95.1","latency_time":526238,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/index.m3u8","status_code":206,"time":"2021-07-15 23:12:42.951"}
+time="2021-07-15T23:12:42+08:00" level=info client_ip=192.168.95.1 latency_time="526.238µs" req_method=GET req_uri=/channellist/channel1/index.m3u8 status_code=206
+{"client_ip":"192.168.95.1","latency_time":242988,"level":"info","msg":"","req_method":"POST","req_uri":"/admin/addStream","status_code":200,"time":"2021-07-15 23:12:52.663"}
+time="2021-07-15T23:12:52+08:00" level=info client_ip=192.168.95.1 latency_time="242.988µs" req_method=POST req_uri=/admin/addStream status_code=200
+{"client_ip":"192.168.95.1","latency_time":224804,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/index.m3u8","status_code":206,"time":"2021-07-15 23:12:54.128"}
+time="2021-07-15T23:12:54+08:00" level=info client_ip=192.168.95.1 latency_time="224.804µs" req_method=GET req_uri=/channellist/channel1/index.m3u8 status_code=206
+{"client_ip":"192.168.95.1","latency_time":45678982,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/cctv1_2md/1626361938_7462042.ts","status_code":200,"time":"2021-07-15 23:12:55.841"}
+time="2021-07-15T23:12:55+08:00" level=info client_ip=192.168.95.1 latency_time=45.678982ms req_method=GET req_uri=/channellist/channel1/cctv1_2md/1626361938_7462042.ts status_code=200
+{"client_ip":"192.168.95.1","latency_time":10258761,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/cctv1_2md/1626361948_7462043.ts","status_code":200,"time":"2021-07-15 23:13:07.092"}
+time="2021-07-15T23:13:07+08:00" level=info client_ip=192.168.95.1 latency_time=10.258761ms req_method=GET req_uri=/channellist/channel1/cctv1_2md/1626361948_7462043.ts status_code=200
+{"client_ip":"192.168.95.1","latency_time":14930425,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/cctv1_2md/1626361959_7462044.ts","status_code":200,"time":"2021-07-15 23:13:12.102"}
+time="2021-07-15T23:13:12+08:00" level=info client_ip=192.168.95.1 latency_time=14.930425ms req_method=GET req_uri=/channellist/channel1/cctv1_2md/1626361959_7462044.ts status_code=200
+{"client_ip":"192.168.95.1","latency_time":9538014,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/cctv1_2md/1626361969_7462045.ts","status_code":200,"time":"2021-07-15 23:13:20.738"}
+time="2021-07-15T23:13:20+08:00" level=info client_ip=192.168.95.1 latency_time=9.538014ms req_method=GET req_uri=/channellist/channel1/cctv1_2md/1626361969_7462045.ts status_code=200
+{"client_ip":"192.168.95.1","latency_time":208786,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/index.m3u8","status_code":206,"time":"2021-07-15 23:13:23.891"}
+time="2021-07-15T23:13:23+08:00" level=info client_ip=192.168.95.1 latency_time="208.786µs" req_method=GET req_uri=/channellist/channel1/index.m3u8 status_code=206
+{"client_ip":"192.168.95.1","latency_time":226781,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/index.m3u8","status_code":206,"time":"2021-07-15 23:17:14.424"}
+time="2021-07-15T23:17:14+08:00" level=info client_ip=192.168.95.1 latency_time="226.781µs" req_method=GET req_uri=/channellist/channel1/index.m3u8 status_code=206
+{"client_ip":"192.168.95.1","latency_time":50214900,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/cctv1_2md/1626362211_7462068.ts","status_code":200,"time":"2021-07-15 23:17:14.506"}
+time="2021-07-15T23:17:14+08:00" level=info client_ip=192.168.95.1 latency_time=50.2149ms req_method=GET req_uri=/channellist/channel1/cctv1_2md/1626362211_7462068.ts status_code=200
+{"client_ip":"192.168.95.1","latency_time":43481908,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/cctv1_2md/1626362221_7462069.ts","status_code":200,"time":"2021-07-15 23:17:15.892"}
+time="2021-07-15T23:17:15+08:00" level=info client_ip=192.168.95.1 latency_time=43.481908ms req_method=GET req_uri=/channellist/channel1/cctv1_2md/1626362221_7462069.ts status_code=200
+{"client_ip":"192.168.95.1","latency_time":47129158,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/cctv1_2md/1626362231_7462070.ts","status_code":200,"time":"2021-07-15 23:17:19.518"}
+time="2021-07-15T23:17:19+08:00" level=info client_ip=192.168.95.1 latency_time=47.129158ms req_method=GET req_uri=/channellist/channel1/cctv1_2md/1626362231_7462070.ts status_code=200
+{"client_ip":"192.168.95.1","latency_time":473632872,"level":"info","msg":"","req_method":"GET","req_uri":"/admin/deleteStream?url=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8","status_code":200,"time":"2021-07-15 23:17:22.834"}
+time="2021-07-15T23:17:22+08:00" level=info client_ip=192.168.95.1 latency_time=473.632872ms req_method=GET req_uri="/admin/deleteStream?url=http://cctvalih5ca.v.myalicdn.com/live/cctv1_2/index.m3u8" status_code=200
+{"client_ip":"192.168.95.1","latency_time":272118,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/index.m3u8","status_code":206,"time":"2021-07-15 23:17:44.043"}
+time="2021-07-15T23:17:44+08:00" level=info client_ip=192.168.95.1 latency_time="272.118µs" req_method=GET req_uri=/channellist/channel1/index.m3u8 status_code=206
+{"client_ip":"192.168.95.1","latency_time":335131,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/index.m3u8","status_code":206,"time":"2021-07-15 23:17:54.881"}
+time="2021-07-15T23:17:54+08:00" level=info client_ip=192.168.95.1 latency_time="335.131µs" req_method=GET req_uri=/channellist/channel1/index.m3u8 status_code=206
+{"client_ip":"192.168.95.1","latency_time":1095428,"level":"info","msg":"","req_method":"POST","req_uri":"/admin/addStream","status_code":200,"time":"2021-07-15 23:17:55.214"}
+time="2021-07-15T23:17:55+08:00" level=info client_ip=192.168.95.1 latency_time=1.095428ms req_method=POST req_uri=/admin/addStream status_code=200
+{"client_ip":"192.168.95.1","latency_time":195595,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/index.m3u8","status_code":206,"time":"2021-07-15 23:18:06.095"}
+time="2021-07-15T23:18:06+08:00" level=info client_ip=192.168.95.1 latency_time="195.595µs" req_method=GET req_uri=/channellist/channel1/index.m3u8 status_code=206
+{"client_ip":"192.168.95.1","latency_time":40251852,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/cctv1_2md/1626362252_7462072.ts","status_code":200,"time":"2021-07-15 23:18:07.294"}
+time="2021-07-15T23:18:07+08:00" level=info client_ip=192.168.95.1 latency_time=40.251852ms req_method=GET req_uri=/channellist/channel1/cctv1_2md/1626362252_7462072.ts status_code=200
+{"client_ip":"192.168.95.1","latency_time":42008036,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/cctv1_2md/1626362262_7462073.ts","status_code":200,"time":"2021-07-15 23:18:17.652"}
+time="2021-07-15T23:18:17+08:00" level=info client_ip=192.168.95.1 latency_time=42.008036ms req_method=GET req_uri=/channellist/channel1/cctv1_2md/1626362262_7462073.ts status_code=200
+{"client_ip":"192.168.95.1","latency_time":44049873,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/cctv1_2md/1626362273_7462074.ts","status_code":200,"time":"2021-07-15 23:18:21.372"}
+time="2021-07-15T23:18:21+08:00" level=info client_ip=192.168.95.1 latency_time=44.049873ms req_method=GET req_uri=/channellist/channel1/cctv1_2md/1626362273_7462074.ts status_code=200
+{"client_ip":"192.168.95.1","latency_time":17387832,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/cctv1_2md/1626362283_7462075.ts","status_code":200,"time":"2021-07-15 23:18:31.454"}
+time="2021-07-15T23:18:31+08:00" level=info client_ip=192.168.95.1 latency_time=17.387832ms req_method=GET req_uri=/channellist/channel1/cctv1_2md/1626362283_7462075.ts status_code=200
+{"client_ip":"192.168.95.1","latency_time":360390,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/index.m3u8","status_code":206,"time":"2021-07-15 23:18:36.009"}
+time="2021-07-15T23:18:36+08:00" level=info client_ip=192.168.95.1 latency_time="360.39µs" req_method=GET req_uri=/channellist/channel1/index.m3u8 status_code=206
+{"client_ip":"192.168.95.1","latency_time":38632191,"level":"info","msg":"","req_method":"GET","req_uri":"/channellist/channel1/cctv1_2md/1626362294_7462076.ts","status_code":200,"time":"2021-07-15 23:18:41.895"}
+time="2021-07-15T23:18:41+08:00" level=info client_ip=192.168.95.1 latency_time=38.632191ms req_method=GET req_uri=/channellist/channel1/cctv1_2md/1626362294_7462076.ts status_code=200
