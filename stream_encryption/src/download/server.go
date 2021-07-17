@@ -58,6 +58,7 @@ type StreamDownload struct {
 	HlsStream       *hls.Stream
 	M3u8            *hls.M3u8
 	LastM3u8Time    time.Time
+	NewStreamUrl    string //
 }
 
 func (s *StreamDownload) Download() {
@@ -280,6 +281,7 @@ type StreamsDownload struct {
 	Streams         *StreamsConfig
 	MaxFileCount    int
 	DeleteFileCount int
+	Url             string
 	StreamMutex     sync.Mutex
 	StreamMap       map[string]*StreamDownload
 }
@@ -313,6 +315,7 @@ func (server *StreamsDownload) StreamAdd(channelName, streamUrl, pushUrl, srcPat
 		IndexM3u8Pushed: false,
 		MaxFileCount:    server.MaxFileCount,
 		DeleteFileCount: server.DeleteFileCount,
+		NewStreamUrl:    server.Url + "/channellist/" + channelName + "/index.m3u8",
 	}
 	server.StreamMap[channelName] = stream
 	return nil, stream
@@ -354,6 +357,7 @@ func New() *StreamsDownload {
 	server := &StreamsDownload{
 		MaxFileCount:    config.GetInstance().Config.Stream.MaxFileCount,
 		DeleteFileCount: config.GetInstance().Config.Stream.DeleteCount,
+		Url:             config.GetInstance().Config.Stream.Url,
 		StreamMap:       make(map[string]*StreamDownload),
 	}
 	server.loadConfig()

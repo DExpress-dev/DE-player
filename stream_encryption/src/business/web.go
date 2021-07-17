@@ -358,6 +358,7 @@ func (wm *WebManager) AddStream(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"result":  http.StatusOK,
 		"message": "OK",
+		"url":     stream.NewStreamUrl,
 	})
 }
 
