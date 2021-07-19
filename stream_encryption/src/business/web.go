@@ -52,6 +52,19 @@ type DeleteStreamRequest struct {
 	DeleteLocal bool   `json:"deleteLocal"` //频道名称
 }
 
+type StreamInfo struct {
+	ChannelName    string `json:"channelName"`    //频道名称
+	SourceUrl      string `json:"sourceUrl"`      //频道地址
+	PushUrl        string `json:"pushUrl"`        //推送地址
+	SrcPath        string `json:"SrcPath"`        //本地保存地址
+	Key            string `json:"key"`            //加密密钥
+	IV             string `json:"iv"`             //加密向量
+	EncryptionPath string `json:"encryptionPath"` //加密密钥
+}
+type StreamList struct {
+	Streams []*StreamInfo `json:"streams"`
+}
+
 type AdminsIP struct {
 	Admins []string `json:"admins"`
 }
@@ -345,6 +358,7 @@ func (wm *WebManager) AddStream(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"result":  http.StatusOK,
 		"message": "OK",
+		"url":     stream.NewStreamUrl,
 	})
 }
 
@@ -379,6 +393,39 @@ func (wm *WebManager) DeleteStream(c *gin.Context) {
 		"result":  http.StatusOK,
 		"message": uri,
 	})
+}
+
+func (wm *WebManager) GetStreams(c *gin.Context) {
+
+	log4plus.Info("---->>>>GetStreams****")
+
+	//检测IP地址
+	if !wm.checkIp(c) {
+		c.JSON(StatusIp, gin.H{
+			"result":  StatusIp,
+			"message": "Client Ip not Admin",
+		})
+	}
+
+	wm.streamDownload.StreamMutex.Lock()
+	defer wm.streamDownload.StreamMutex.Unlock()
+
+	var list StreamList
+	for _, v := range wm.streamDownload.StreamMap {
+
+		s := &StreamInfo{
+
+			ChannelName:    v.ChannelName,
+			SourceUrl:      v.StreamUrl,
+			PushUrl:        v.PushUrl,
+			SrcPath:        v.SrcPath,
+			Key:            v.Key,
+			IV:             v.IV,
+			EncryptionPath: v.EncryptionPath,
+		}
+		list.Streams = append(list.Streams, s)
+	}
+	c.JSON(http.StatusOK, list)
 }
 
 func (wm *WebManager) ClearStream(c *gin.Context) {
@@ -500,6 +547,7 @@ func (wm *WebManager) startAdmin() {
 		adminGroup.POST("/addStream", wm.AddStream)
 		adminGroup.GET("/deleteStream", wm.DeleteStream)
 		adminGroup.GET("/clearStream", wm.ClearStream)
+		adminGroup.GET("/getStreams", wm.GetStreams)
 	}
 	wm.AdminGin.Run(wm.AdminListen)
 }

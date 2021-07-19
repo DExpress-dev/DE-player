@@ -10,6 +10,7 @@ import (
 )
 
 type StreamConfig struct {
+	Url          string `json:"url"`
 	UrlFile      string `json:"url_file"`
 	BandWidth    string `json:"bandwidth"`
 	MaxFileCount int    `json:"max_count"`
