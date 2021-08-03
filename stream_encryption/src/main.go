@@ -1,14 +1,5 @@
 package main
 
-/*
-const char* build_time(void)
-{
-    static const char* psz_build_time = "["__DATE__ "  " __TIME__ "]";
-    return psz_build_time;
-
-}
-*/
-import "C"
 import (
 	"business"
 	"encoding/json"
@@ -24,14 +15,13 @@ import (
 
 //版本号
 var (
-	ver       string = "1.0.5"
-	exeName   string = "Stream Encryption"
-	buildTime string = C.GoString(C.build_time())
+	ver     string = "1.0.6"
+	exeName string = "Stream Encryption"
 )
 
 type Config struct {
-	ChannelListen string `json:"ChannelListen"` //管理查询
-	AdminListen   string `json:"AdminListen"`   //体感上报
+	ChannelListen string `json:"ChannelListen"` //播放器请求
+	AdminListen   string `json:"AdminListen"`   //管理端请求
 }
 
 type ConfigBusiness struct {
@@ -69,7 +59,6 @@ func (f *Flags) Check() (needReturn bool) {
 		needReturn = true
 	} else if f.Version {
 		verString := exeName + " Version: " + ver + "\r\n"
-		verString += "compile time:" + buildTime + "\r\n"
 		fmt.Println(verString)
 		needReturn = true
 	}
@@ -146,7 +135,7 @@ func main() {
 
 	setLog()
 	defer log4plus.Close()
-	log4plus.Info("%s Version=%s Build Time=%s", getExeName(), ver, buildTime)
+	log4plus.Info("%s Version=%s", getExeName(), ver)
 	defer log4plus.Close()
 
 	//加载配置信息
